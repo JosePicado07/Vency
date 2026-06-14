@@ -7,230 +7,81 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "surface": "#fbf9f9", "surface-dim": "#dbdad9", "surface-bright": "#fbf9f9",
-        "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3",
-        "surface-container": "#efeded", "surface-container-high": "#e9e8e7",
-        "surface-container-highest": "#e4e2e2", "on-surface": "#1b1c1c",
-        "on-surface-variant": "#444748", "inverse-surface": "#303031",
-        "inverse-on-surface": "#f2f0f0", "outline": "#747878",
-        "outline-variant": "#c4c7c7", "surface-tint": "#5f5e5e",
-        "primary": "#000000", "on-primary": "#ffffff",
-        "primary-container": "#1c1b1b", "on-primary-container": "#858383",
-        "inverse-primary": "#c8c6c5", "secondary": "#735c00",
-        "on-secondary": "#ffffff", "secondary-container": "#fed65b",
-        "on-secondary-container": "#745c00", "tertiary": "#000000",
-        "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-error": "#ffffff",
-        "primary-fixed": "#e5e2e1", "primary-fixed-dim": "#c8c6c5",
-        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
-        "on-secondary-fixed": "#241a00", "background": "#fbf9f9",
-        "on-background": "#1b1c1c", "surface-variant": "#e4e2e2"
-      },
-      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-      spacing: {
-        "unit-xs": "4px", "unit-sm": "8px", "unit-md": "16px",
-        "unit-lg": "24px", "unit-xl": "48px", "margin-mobile": "20px",
-        "margin-tablet": "40px", "gutter": "16px"
-      },
-      fontFamily: {
-        "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
-        "headline-md": ["Playfair Display"], "headline-sm": ["Playfair Display"],
-        "body-lg": ["Manrope"], "body-md": ["Manrope"],
-        "label-md": ["Manrope"], "label-sm": ["Manrope"]
-      },
-      fontSize: {
-        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
-        "headline-sm": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
-        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}]
-      }
-    }
-  }
-}
-</script>
-<style>
-  body { background-color: #fbf9f9; color: #1b1c1c; -webkit-font-smoothing: antialiased; min-height: max(884px, 100dvh); }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  .size-chip { transition: all 0.2s ease; }
-  .size-chip.selected { background: #000; color: #fff; border-color: #000; }
-  .note-ring { box-shadow: 0 0 0 1px rgba(115,92,0,0.2); }
-</style>
+<style>body{background-color:#fbf9f9;color:#1b1c1c;-webkit-font-smoothing:antialiased;min-height:max(884px,100dvh);font-family:Manrope,sans-serif}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}.size-chip{transition:all 0.2s ease;padding:8px 20px;border:1px solid #747878;border-radius:9999px;font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;background:white;color:#1b1c1c}.size-chip.selected{background:#000;color:#fff;border-color:#000}</style>
 </head>
-<body class="bg-background text-on-background font-body-md">
-
-<!-- Header -->
-<header class="w-full top-0 sticky z-50 bg-background/95 backdrop-blur-sm flex justify-between items-center px-margin-mobile py-unit-md">
-  <button onclick="history.back()" class="text-primary hover:opacity-70 transition-opacity">
-    <span class="material-symbols-outlined">arrow_back</span>
-  </button>
-  <h1 class="font-headline-sm text-[18px] uppercase tracking-widest text-primary">Vency Atelier</h1>
-  <a href="bag.html" class="text-primary hover:opacity-70 transition-opacity relative">
-    <span class="material-symbols-outlined">shopping_bag</span>
-  </a>
+<body>
+<header style="position:sticky;top:0;z-index:50;background:#fbf9f9;display:flex;justify-content:space-between;align-items:center;padding:16px 20px">
+  <button onclick="history.back()" style="color:#000"><span class="material-symbols-outlined">arrow_back</span></button>
+  <h1 style="font-family:'Playfair Display';font-size:18px;text-transform:uppercase;letter-spacing:0.2em">Vency Atelier</h1>
+  <a href="bag.html" style="color:#000"><span class="material-symbols-outlined">shopping_bag</span></a>
 </header>
-
-<main class="pb-36">
-
-  <!-- Hero Image -->
-  <div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-low relative">
-    <img alt="Noir Éthéré" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
-    <div class="absolute top-4 left-4 flex gap-2">
-      <span class="bg-background/90 backdrop-blur-sm border border-outline-variant/50 px-3 py-1 font-label-sm text-label-sm uppercase tracking-widest text-primary">Original Blend</span>
-    </div>
-    <button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center" id="wishlist-btn" onclick="toggleWishlist()">
-      <span class="material-symbols-outlined text-primary" id="wishlist-icon">favorite_border</span>
-    </button>
+<main style="padding-bottom:120px">
+  <div style="aspect-ratio:4/5;overflow:hidden;background:#efeded;position:relative">
+    <img alt="Noir Éthéré" style="width:100%;height:100%;object-fit:cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
+    <div style="position:absolute;top:16px;left:16px"><span style="background:rgba(251,249,249,0.9);border:1px solid rgba(196,199,199,0.5);padding:4px 12px;font-size:12px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase">Original Blend</span></div>
+    <button style="position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.8);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="toggleWishlist()" id="wb"><span class="material-symbols-outlined" id="wi">favorite_border</span></button>
   </div>
-
-  <!-- Product Info -->
-  <div class="px-margin-mobile pt-unit-lg pb-unit-md">
-    <div class="flex justify-between items-start">
+  <div style="padding:24px 20px 16px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
       <div>
-        <h2 class="font-display-lg-mobile text-display-lg-mobile text-primary leading-tight">Noir Éthéré</h2>
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Vency Atelier · Original Blend</p>
+        <h2 style="font-family:'Playfair Display';font-size:36px;font-weight:600;letter-spacing:-0.01em;line-height:44px">Noir Éthéré</h2>
+        <p style="font-size:12px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:#444748;margin-top:4px">Vency Atelier · Original Blend</p>
       </div>
-      <div class="text-right">
-        <p class="font-headline-sm text-headline-sm text-primary" id="current-price">$42.00</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase">5ml decant</p>
+      <div style="text-align:right">
+        <p style="font-family:'Playfair Display';font-size:22px;font-weight:500" id="current-price">$42.00</p>
+        <p style="font-size:12px;color:#444748;text-transform:uppercase" id="size-label">5ml decant</p>
       </div>
     </div>
-    <p class="font-body-md text-body-md text-on-surface-variant mt-unit-md leading-relaxed">
-      Una fragancia que evoca la quietud de medianoche: maderas oscuras, una hoja de violeta fresca, y la persistencia cálida del ambroxán. Diseñada para quienes aprecian la sofisticación sin esfuerzo.
-    </p>
+    <p style="font-size:16px;color:#444748;margin-top:16px;line-height:1.6">Una fragancia que evoca la quietud de medianoche: maderas oscuras, una hoja de violeta fresca, y la persistencia cálida del ambroxán. Diseñada para quienes aprecian la sofisticación sin esfuerzo.</p>
   </div>
-
-  <!-- Scent Pyramid -->
-  <div class="px-margin-mobile py-unit-lg border-t border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-lg">Las Notas</h3>
-    <div class="grid grid-cols-3 gap-unit-sm text-center">
+  <div style="padding:24px 20px;border-top:1px solid rgba(196,199,199,0.3)">
+    <h3 style="font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:24px">Las Notas</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center">
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#fdf9f1] border border-yellow-200/60 note-ring mx-auto mb-unit-sm flex items-center justify-center">
-          <span class="text-xl">🌿</span>
-        </div>
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit-xs">Cima</p>
-        <p class="font-body-md text-body-md text-primary">Bergamota</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Pimienta Rosa</p>
+        <div style="width:48px;height:48px;border-radius:50%;background:#fdf9f1;border:1px solid rgba(253,249,241,0.6);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:20px">🌿</div>
+        <p style="font-size:12px;color:#444748;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Cima</p>
+        <p style="font-size:16px">Bergamota</p><p style="font-size:12px;color:#444748">Pimienta Rosa</p>
       </div>
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#fdf2f2] border border-pink-200/60 note-ring mx-auto mb-unit-sm flex items-center justify-center">
-          <span class="text-xl">🌸</span>
-        </div>
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit-xs">Corazón</p>
-        <p class="font-body-md text-body-md text-primary">Hoja de Violeta</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Iris · Geranio</p>
+        <div style="width:48px;height:48px;border-radius:50%;background:#fdf2f2;border:1px solid rgba(253,242,242,0.6);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:20px">🌸</div>
+        <p style="font-size:12px;color:#444748;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Corazón</p>
+        <p style="font-size:16px">Hoja de Violeta</p><p style="font-size:12px;color:#444748">Iris · Geranio</p>
       </div>
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#f9f5f0] border border-amber-200/60 note-ring mx-auto mb-unit-sm flex items-center justify-center">
-          <span class="text-xl">🪵</span>
-        </div>
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-unit-xs">Base</p>
-        <p class="font-body-md text-body-md text-primary">Sándalo</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Ambroxán · Musgo</p>
+        <div style="width:48px;height:48px;border-radius:50%;background:#f9f5f0;border:1px solid rgba(249,245,240,0.6);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:20px">🪵</div>
+        <p style="font-size:12px;color:#444748;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px">Base</p>
+        <p style="font-size:16px">Sándalo</p><p style="font-size:12px;color:#444748">Ambroxán · Musgo</p>
       </div>
     </div>
   </div>
-
-  <!-- Size Selector -->
-  <div class="px-margin-mobile py-unit-lg border-t border-outline-variant/30">
-    <div class="flex justify-between items-center mb-unit-md">
-      <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest">Elige tu Tamaño</h3>
-      <a href="decants.html" class="font-label-sm text-label-sm text-secondary underline underline-offset-2">Guía de tamaños</a>
+  <div style="padding:24px 20px;border-top:1px solid rgba(196,199,199,0.3)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <h3 style="font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase">Elige tu Tamaño</h3>
+      <a href="decants.html" style="font-size:12px;color:#735c00;text-decoration:underline">Guía de tamaños</a>
     </div>
-    <div class="flex flex-wrap gap-unit-sm">
-      <button class="size-chip px-unit-lg py-unit-sm border border-outline rounded-full font-label-md text-label-md uppercase" data-price="12.00" data-label="2ml decant" onclick="selectSize(this)">2ml — $12</button>
-      <button class="size-chip selected px-unit-lg py-unit-sm border border-outline rounded-full font-label-md text-label-md uppercase" data-price="42.00" data-label="5ml decant" onclick="selectSize(this)">5ml — $42</button>
-      <button class="size-chip px-unit-lg py-unit-sm border border-outline rounded-full font-label-md text-label-md uppercase" data-price="75.00" data-label="10ml decant" onclick="selectSize(this)">10ml — $75</button>
-      <button class="size-chip px-unit-lg py-unit-sm border border-outline rounded-full font-label-md text-label-md uppercase" data-price="245.00" data-label="Frasco 30ml" onclick="selectSize(this)">30ml — $245</button>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <button class="size-chip" data-price="12.00" data-label="2ml decant" onclick="selectSize(this)">2ml — $12</button>
+      <button class="size-chip selected" data-price="42.00" data-label="5ml decant" onclick="selectSize(this)">5ml — $42</button>
+      <button class="size-chip" data-price="75.00" data-label="10ml decant" onclick="selectSize(this)">10ml — $75</button>
+      <button class="size-chip" data-price="245.00" data-label="Frasco 30ml" onclick="selectSize(this)">30ml — $245</button>
     </div>
   </div>
-
-  <!-- Characteristics -->
-  <div class="px-margin-mobile py-unit-lg border-t border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-md">Características</h3>
-    <div class="grid grid-cols-3 gap-unit-sm">
-      <div class="bg-surface-container-low p-unit-md text-center rounded-lg">
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-unit-xs">Familia</p>
-        <p class="font-body-md text-primary">Amaderado</p>
-      </div>
-      <div class="bg-surface-container-low p-unit-md text-center rounded-lg">
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-unit-xs">Proyección</p>
-        <p class="font-body-md text-primary">Alta</p>
-      </div>
-      <div class="bg-surface-container-low p-unit-md text-center rounded-lg">
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-unit-xs">Duración</p>
-        <p class="font-body-md text-primary">8–12h</p>
-      </div>
+  <div style="padding:24px 20px;border-top:1px solid rgba(196,199,199,0.3)">
+    <h3 style="font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px">Características</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="background:#f5f3f3;padding:16px;text-align:center;border-radius:4px"><p style="font-size:12px;color:#444748;text-transform:uppercase;margin-bottom:4px">Familia</p><p style="font-size:16px">Amaderado</p></div>
+      <div style="background:#f5f3f3;padding:16px;text-align:center;border-radius:4px"><p style="font-size:12px;color:#444748;text-transform:uppercase;margin-bottom:4px">Proyección</p><p style="font-size:16px">Alta</p></div>
+      <div style="background:#f5f3f3;padding:16px;text-align:center;border-radius:4px"><p style="font-size:12px;color:#444748;text-transform:uppercase;margin-bottom:4px">Duración</p><p style="font-size:16px">8–12h</p></div>
     </div>
   </div>
-
-  <!-- Related -->
-  <div class="px-margin-mobile py-unit-lg border-t border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-md">También te Puede Gustar</h3>
-    <div class="grid grid-cols-2 gap-gutter">
-      <a href="product.html?f=rouge54" class="group block">
-        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
-        </div>
-        <p class="font-label-md text-label-md text-primary uppercase">Rouge 5.4</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $38.00</p>
-      </a>
-      <a href="product.html?f=oudsilk" class="group block">
-        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
-        </div>
-        <p class="font-label-md text-label-md text-primary uppercase">Oud Silk</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $55.00</p>
-      </a>
-    </div>
-  </div>
-
 </main>
-
-<!-- Sticky CTA -->
-<div class="fixed bottom-0 left-0 w-full bg-background border-t border-outline-variant/30 px-margin-mobile py-unit-md z-50 shadow-[0_-4px_20px_0_rgba(0,0,0,0.06)]">
-  <div class="flex gap-unit-sm">
-    <button class="flex-1 bg-primary text-on-primary py-4 font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-opacity" onclick="addToCart()">
-      Añadir al Ritual
-    </button>
-    <a href="index.html" class="px-unit-md py-4 border border-outline flex items-center justify-center hover:border-primary transition-colors">
-      <span class="material-symbols-outlined text-primary">grid_view</span>
-    </a>
-  </div>
+<div style="position:fixed;bottom:0;left:0;width:100%;background:#fbf9f9;border-top:1px solid rgba(196,199,199,0.3);padding:16px 20px;z-index:50;display:flex;gap:8px">
+  <button style="flex:1;background:#000;color:#fff;padding:16px;font-size:14px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer" onclick="addToCart()">Añadir al Ritual</button>
+  <a href="index.html" style="padding:16px;border:1px solid #747878;display:flex;align-items:center;justify-content:center;color:#000"><span class="material-symbols-outlined">grid_view</span></a>
 </div>
-
 <script>
-function selectSize(el) {
-  document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  const price = el.getAttribute('data-price');
-  const label = el.getAttribute('data-label');
-  document.getElementById('current-price').textContent = '$' + parseFloat(price).toFixed(2);
-  document.querySelector('#current-price + p').textContent = label;
-}
-
-function toggleWishlist() {
-  const icon = document.getElementById('wishlist-icon');
-  icon.textContent = icon.textContent === 'favorite_border' ? 'favorite' : 'favorite_border';
-}
-
-function addToCart() {
-  const btn = document.querySelector('[onclick="addToCart()"]');
-  btn.textContent = '¡Añadido!';
-  btn.classList.add('opacity-70');
-  setTimeout(() => {
-    btn.textContent = 'Añadir al Ritual';
-    btn.classList.remove('opacity-70');
-  }, 1500);
-}
+function selectSize(el){document.querySelectorAll('.size-chip').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');document.getElementById('current-price').textContent='$'+parseFloat(el.dataset.price).toFixed(2);document.getElementById('size-label').textContent=el.dataset.label}
+function toggleWishlist(){const i=document.getElementById('wi');i.textContent=i.textContent==='favorite_border'?'favorite':'favorite_border'}
+function addToCart(){const b=document.querySelector('[onclick="addToCart()"]');const o=b.textContent;b.textContent='¡Añadido!';b.style.opacity='0.7';setTimeout(()=>{b.textContent=o;b.style.opacity='1'},1500)}
 </script>
-</body>
-</html>
+</body></html>

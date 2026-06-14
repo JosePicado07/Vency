@@ -8,275 +8,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "surface": "#fbf9f9", "surface-dim": "#dbdad9", "surface-bright": "#fbf9f9",
-        "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3",
-        "surface-container": "#efeded", "surface-container-high": "#e9e8e7",
-        "surface-container-highest": "#e4e2e2", "on-surface": "#1b1c1c",
-        "on-surface-variant": "#444748", "inverse-surface": "#303031",
-        "inverse-on-surface": "#f2f0f0", "outline": "#747878",
-        "outline-variant": "#c4c7c7", "surface-tint": "#5f5e5e",
-        "primary": "#000000", "on-primary": "#ffffff",
-        "primary-container": "#1c1b1b", "on-primary-container": "#858383",
-        "inverse-primary": "#c8c6c5", "secondary": "#735c00",
-        "on-secondary": "#ffffff", "secondary-container": "#fed65b",
-        "on-secondary-container": "#745c00", "tertiary": "#000000",
-        "on-tertiary": "#ffffff", "tertiary-container": "#1b1c19",
-        "on-tertiary-container": "#848480", "error": "#ba1a1a",
-        "on-error": "#ffffff", "error-container": "#ffdad6",
-        "on-error-container": "#93000a", "primary-fixed": "#e5e2e1",
-        "primary-fixed-dim": "#c8c6c5", "on-primary-fixed": "#1c1b1b",
-        "on-primary-fixed-variant": "#474646", "secondary-fixed": "#ffe088",
-        "secondary-fixed-dim": "#e9c349", "on-secondary-fixed": "#241a00",
-        "on-secondary-fixed-variant": "#574500", "tertiary-fixed": "#e3e3de",
-        "tertiary-fixed-dim": "#c7c7c2", "on-tertiary-fixed": "#1b1c19",
-        "on-tertiary-fixed-variant": "#464744", "background": "#fbf9f9",
-        "on-background": "#1b1c1c", "surface-variant": "#e4e2e2"
-      },
-      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-      spacing: {
-        "unit-xs": "4px", "unit-sm": "8px", "unit-md": "16px",
-        "unit-lg": "24px", "unit-xl": "48px", "margin-mobile": "20px",
-        "margin-tablet": "40px", "gutter": "16px"
-      },
-      fontFamily: {
-        "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
-        "headline-md": ["Playfair Display"], "headline-sm": ["Playfair Display"],
-        "body-lg": ["Manrope"], "body-md": ["Manrope"],
-        "label-md": ["Manrope"], "label-sm": ["Manrope"]
-      },
-      fontSize: {
-        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
-        "headline-sm": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
-        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}]
-      }
-    }
-  }
-}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#fbf9f9","surface-container-low":"#f5f3f3","surface-container":"#efeded","surface-container-high":"#e9e8e7","on-surface":"#1b1c1c","on-surface-variant":"#444748","outline":"#747878","outline-variant":"#c4c7c7","primary":"#000000","on-primary":"#ffffff","secondary":"#735c00","secondary-container":"#fed65b","primary-fixed":"#e5e2e1","primary-fixed-dim":"#c8c6c5","background":"#fbf9f9","on-background":"#1b1c1c"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"unit-xs":"4px","unit-sm":"8px","unit-md":"16px","unit-lg":"24px","unit-xl":"48px","margin-mobile":"20px","gutter":"16px"},fontFamily:{"display-lg-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"headline-sm":["Playfair Display"],"body-md":["Manrope"],"label-md":["Manrope"],"label-sm":["Manrope"]},fonts:{"display-lg-mobile":["36px",{"lineHeight":"44px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.03em","fontWeight":"500"}]}}}}
 </script>
-<style>
-  body { background-color: #fbf9f9; color: #1b1c1c; -webkit-font-smoothing: antialiased; min-height: max(884px, 100dvh); }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-  .scent-bubble { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .scent-bubble:hover { transform: scale(1.1); }
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  .scent-bubble.active { background-color: #000; color: #fff; }
-</style>
+<style>body{background-color:#fbf9f9;color:#1b1c1c;-webkit-font-smoothing:antialiased;min-height:max(884px,100dvh)}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}.scent-bubble{transition:transform 0.3s ease}.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}</style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim">
-
-<!-- Header -->
+<body class="bg-background text-on-background font-body-md">
 <header class="w-full top-0 sticky z-40 bg-background/95 backdrop-blur-sm">
-  <nav class="flex justify-between items-center px-margin-mobile py-unit-md w-full max-w-screen-xl mx-auto">
-    <button class="hover:opacity-70 transition-opacity p-unit-xs">
-      <span class="material-symbols-outlined text-primary">menu</span>
-    </button>
-    <h1 class="font-headline-sm text-[18px] uppercase tracking-widest text-primary">Vency Atelier</h1>
-    <a href="bag.html" class="hover:opacity-70 transition-opacity p-unit-xs">
-      <span class="material-symbols-outlined text-primary">shopping_bag</span>
-    </a>
+  <nav class="flex justify-between items-center px-[20px] py-[16px]">
+    <button class="hover:opacity-70"><span class="material-symbols-outlined text-primary">menu</span></button>
+    <h1 class="text-[18px] uppercase tracking-widest text-primary" style="font-family:'Playfair Display'">Vency Atelier</h1>
+    <a href="bag.html" class="hover:opacity-70"><span class="material-symbols-outlined text-primary">shopping_bag</span></a>
   </nav>
 </header>
-
-<main class="pb-32 max-w-screen-xl mx-auto">
-
-  <!-- Search -->
-  <section class="px-margin-mobile pt-unit-lg pb-unit-xl">
-    <div class="relative group">
-      <span class="material-symbols-outlined absolute left-unit-md top-1/2 -translate-y-1/2 text-on-surface-variant/60 group-focus-within:text-primary transition-colors">search</span>
-      <input class="w-full pl-12 pr-unit-md py-4 bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg font-body-md transition-all placeholder:text-on-surface-variant/40" placeholder="Buscar fragancias, notas o casas..." type="text"/>
+<main class="pb-32">
+  <section class="px-[20px] pt-[24px] pb-[48px]">
+    <div class="relative">
+      <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#444748]/60">search</span>
+      <input class="w-full pl-12 pr-4 py-4 bg-[#f5f3f3] border-none focus:ring-1 focus:ring-black rounded-lg text-base" placeholder="Buscar fragancias, notas o casas..." type="text"/>
     </div>
   </section>
-
-  <!-- Scent Note Bubbles -->
-  <section class="px-margin-mobile mb-unit-xl overflow-hidden">
-    <div class="flex justify-between items-end mb-unit-md">
-      <h2 class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight">Buscar por Nota</h2>
-      <button class="text-label-sm font-label-sm text-on-surface-variant underline underline-offset-4 hover:text-primary" onclick="clearBubbles()">Borrar todo</button>
+  <section class="px-[20px] mb-[48px]">
+    <div class="flex justify-between items-end mb-[16px]">
+      <h2 class="text-[22px] text-black uppercase tracking-tight" style="font-family:'Playfair Display';font-weight:500">Buscar por Nota</h2>
+      <button class="text-xs text-[#444748] underline" onclick="clearBubbles()">Borrar todo</button>
     </div>
-    <div class="flex flex-wrap gap-unit-sm">
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#fdf2f2] border border-pink-200 inline-block"></span>Jazmín
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#fdf9f1] border border-yellow-200 inline-block"></span>Ámbar
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#f2fdf4] border border-green-200 inline-block"></span>Cítrico
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#f5f2fd] border border-purple-200 inline-block"></span>Oud
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#f9f9f9] border border-gray-200 inline-block"></span>Sándalo
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#fdf7f2] border border-orange-200 inline-block"></span>Tabaco
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#f0f8ff] border border-blue-200 inline-block"></span>Marino
-      </button>
-      <button class="scent-bubble flex items-center gap-unit-xs px-unit-lg py-unit-sm border border-outline rounded-full bg-white hover:bg-primary hover:text-on-primary transition-colors font-label-md text-label-md uppercase" onclick="toggleBubble(this)">
-        <span class="w-3 h-3 rounded-full bg-[#fff5f7] border border-rose-200 inline-block"></span>Rosa
-      </button>
+    <div class="flex flex-wrap gap-2">
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#fdf2f2] border border-pink-200 inline-block"></span>Jazmín</button>
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#fdf9f1] border border-yellow-200 inline-block"></span>Ámbar</button>
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#f2fdf4] border border-green-200 inline-block"></span>Cítrico</button>
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#f5f2fd] border border-purple-200 inline-block"></span>Oud</button>
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#f9f9f9] border border-gray-200 inline-block"></span>Sándalo</button>
+      <button class="scent-bubble flex items-center gap-2 px-[24px] py-[8px] border border-[#747878] rounded-full bg-white hover:bg-black hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider" style="font-family:Manrope" onclick="toggleBubble(this)"><span class="w-3 h-3 rounded-full bg-[#fdf7f2] border border-orange-200 inline-block"></span>Tabaco</button>
     </div>
   </section>
-
-  <!-- Explore by House -->
-  <section class="mb-unit-xl">
-    <div class="px-margin-mobile flex justify-between items-center mb-unit-md">
-      <h2 class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight">Explorar por Casa</h2>
-      <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
-    </div>
-    <div class="flex overflow-x-auto gap-gutter px-margin-mobile no-scrollbar pb-unit-sm">
-      <div class="min-w-[120px] text-center group cursor-pointer flex-shrink-0">
-        <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-unit-sm border border-outline-variant/30 transition-all group-hover:shadow-lg">
-          <img class="w-full h-full object-cover" alt="Xerjoff" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmhEoyrEmKmcWYOoD4gJiWrdFMVnoZ2qZEa2q6YoJoi8EdbdYovJep_EikCA_rSgiQFBLjDD_ZHSu_1K3xA3LWl20tiTmRBQiqgLvlMdVggwTA2V59DVQWblLS6i45JlyCH4p5tEumFJc1MhtRfcu8BXZwcPcObcAKa8Q3iiqKeY-w-COVL1bIKGmviNbliEuZXJlmYww24XO9FOkVcGNWUTuJSHX_PrVNtHhLA1HO6mLoqu0CaYZh"/>
-        </div>
-        <p class="font-label-md text-label-md uppercase tracking-wider text-primary">Xerjoff</p>
-      </div>
-      <div class="min-w-[120px] text-center group cursor-pointer flex-shrink-0">
-        <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-unit-sm border border-outline-variant/30 transition-all group-hover:shadow-lg">
-          <img class="w-full h-full object-cover" alt="Creed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8BGStoijGk9E7ynkZd85Qj25VQSuu6Qg-S-AqLcMCmlUoEQDsTz5bNrO99XYc5oxJsNTtAzElayQsYythOMlrvJhFBcuc38n8M0XP07vnGzD7Bj8sN0DPJez6qPb3sNUPXZf2NhUG6LS4EcwEAQmVHy_BX7JUmMcatgz08qHO2IRSH_7wYdg5-0GCMXPVARD4XhAhLuLWQGaVyGehX_SwRDHn-xGOuxil0drkehz2mFk3dq2uzReS"/>
-        </div>
-        <p class="font-label-md text-label-md uppercase tracking-wider text-primary">Creed</p>
-      </div>
-      <div class="min-w-[120px] text-center group cursor-pointer flex-shrink-0">
-        <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-unit-sm border border-outline-variant/30 transition-all group-hover:shadow-lg">
-          <img class="w-full h-full object-cover" alt="Parfums de Marly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa3aPaOJaM8yz0gLopl3uisnykup9kTLf_B9pXzxywmHV8ph45F984KgNOKdiqfdaoVP8uXzLtj0wCYscSlD9QuPuXjzjwXlEYYz00Oja_xVM5-g5MWoL6zvIEq0Gp-nLKf5rRJpPg8YoxqNgZhhMmAa45PCTJSyJTnE5BEdxuiy6fNBsrZ-WosDAbmhclO3NMuPNVIeZpV6CvpMoGqX912f6_FlYGGTFjzGpNzggofg0JIdcQ01h1"/>
-        </div>
-        <p class="font-label-md text-label-md uppercase tracking-wider text-primary text-center">Parfums de Marly</p>
-      </div>
-      <div class="min-w-[120px] text-center group cursor-pointer flex-shrink-0">
-        <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-unit-sm border border-outline-variant/30 transition-all group-hover:shadow-lg">
-          <img class="w-full h-full object-cover" alt="Byredo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_zubr5eqIqQSoiTYDh25X0DOxct5q4rbSHceXFacrRpWbknCl40xxSNXuhIE0MK4E3fLM0WPrcjiL7wH2RHPN-lN5fwGLBrnvwvk4iKf2uBTACdhU38_WEsVUL45dM3ctTiq-JMwCsvVRow-wZD5eVxh_ZbnjxdD0xja5Xf784CYOoRvzTIYKQNml-UZsqj8e3N138y6hvvbt_YGALF7rS-T5NuB6QmpI5dVpQbjZVJ40_2DK4tdy"/>
-        </div>
-        <p class="font-label-md text-label-md uppercase tracking-wider text-primary">Byredo</p>
-      </div>
-      <div class="min-w-[120px] text-center group cursor-pointer flex-shrink-0">
-        <div class="aspect-square bg-surface-container-high rounded-full overflow-hidden mb-unit-sm border border-outline-variant/30 flex items-center justify-center transition-all group-hover:shadow-lg">
-          <span class="font-headline-sm text-headline-sm text-on-surface-variant">+</span>
-        </div>
-        <p class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">Ver todas</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Curated Bento Grid -->
-  <section class="px-margin-mobile">
-    <div class="flex flex-col mb-unit-lg">
-      <h2 class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight">Curado para Ti</h2>
-      <p class="text-body-md text-on-surface-variant opacity-70">Basado en tu interés por el Ámbar y las Maderas</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
-
-      <!-- Card 1 — Large hero -->
-      <a href="product.html" class="col-span-2 row-span-1 md:row-span-2 group block">
-        <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto md:h-full bg-surface-container-low rounded-lg transition-all duration-500 hover:shadow-xl" style="min-height:300px;">
-          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Naxos di Sicilia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjbvitvyr2sm13oKpITQWgIiFKXJ49x360si-FqhHdtmXUdOTbcdhNvMKJW8jw-t6AwgDIDmVrk9puujskrkGevIlsZiYAT0gUKrf923gIwRKQtY9BdtgjSj-wk_aIFvSF9WymhWCgzFXzG1Se4JWujT9Dk8UKIL-BspnI8LxDgkcqb9mmZb3tHQyw5eTEjm-5VFZyt6PUnd2u9o5b49tXh2Sdr87zeXd-b9DasSHfHLtimv66H46"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end p-unit-lg">
-            <span class="text-white/80 font-label-sm text-label-sm uppercase mb-unit-xs">Edición Limitada</span>
-            <h3 class="font-headline-md text-white">Naxos di Sicilia</h3>
-            <span class="mt-unit-md py-3 px-6 bg-white text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary-fixed transition-colors w-max inline-block">Descubrir Notas</span>
+  <section class="px-[20px] mb-[48px]">
+    <h2 class="text-[22px] text-black uppercase tracking-tight mb-[16px]" style="font-family:'Playfair Display';font-weight:500">Curado para Ti</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <a href="product.html" class="col-span-2 group block">
+        <div class="relative overflow-hidden rounded-lg bg-[#efeded]" style="height:280px">
+          <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Naxos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjbvitvyr2sm13oKpITQWgIiFKXJ49x360si-FqhHdtmXUdOTbcdhNvMKJW8jw-t6AwgDIDmVrk9puujskrkGevIlsZiYAT0gUKrf923gIwRKQtY9BdtgjSj-wk_aIFvSF9WymhWCgzFXzG1Se4JWujT9Dk8UKIL-BspnI8LxDgkcqb9mmZb3tHQyw5eTEjm-5VFZyt6PUnd2u9o5b49tXh2Sdr87zeXd-b9DasSHfHLtimv66H46"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+            <span class="text-white/80 text-xs uppercase tracking-widest mb-1" style="font-family:Manrope">Edición Limitada</span>
+            <h3 class="text-white text-[28px]" style="font-family:'Playfair Display';font-weight:500">Naxos di Sicilia</h3>
           </div>
         </div>
       </a>
-
-      <!-- Card 2 -->
       <a href="product.html?f=rouge54" class="group block">
-        <div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-unit-sm relative">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Silver Mountain Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5s3CdDXekCakicVuz578NilmB90Krgh2XdKkMezJaXKsdaJZTsBahrZuZ0r8N5ZNTkqjsetI4xRvWw92RRNys6_zLIBLDr571bEuJG__M5Ibf3cPv6OZS0eX48Ujhv51VGeT2US1KgcPUkzNuSlnj_N4o5IkcPNMqgxOLWHveOM4lDyBKStrJFh7_Jdiw_KY-iKbXPPYk6y8pbiJCZ4sW0r1Mjj4kTVMt3kDNU6x_B7y-rP1mxKf"/>
-          <button class="absolute top-unit-sm right-unit-sm w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="material-symbols-outlined text-primary scale-75">favorite</span>
-          </button>
-        </div>
-        <h4 class="font-label-md text-label-md uppercase text-primary">Silver Mountain Water</h4>
-        <p class="text-label-sm text-on-surface-variant">CREED • $32.00 / 5ml</p>
+        <div class="aspect-[3/4] bg-[#efeded] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Silver Mountain Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5s3CdDXekCakicVuz578NilmB90Krgh2XdKkMezJaXKsdaJZTsBahrZuZ0r8N5ZNTkqjsetI4xRvWw92RRNys6_zLIBLDr571bEuJG__M5Ibf3cPv6OZS0eX48Ujhv51VGeT2US1KgcPUkzNuSlnj_N4o5IkcPNMqgxOLWHveOM4lDyBKStrJFh7_Jdiw_KY-iKbXPPYk6y8pbiJCZ4sW0r1Mjj4kTVMt3kDNU6x_B7y-rP1mxKf"/></div>
+        <p class="text-sm font-semibold uppercase text-black" style="font-family:Manrope">Silver Mountain Water</p>
+        <p class="text-xs text-[#444748]" style="font-family:Manrope">CREED • $32 / 5ml</p>
       </a>
-
-      <!-- Card 3 -->
-      <a href="product.html?f=hibiscus" class="group block">
-        <div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-unit-sm relative">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Hibiscus Mahajad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBrf1OBKrwbPOZAJ4HWXVj_59g1Rkg0bHDfQZAEfBf6aqZF9-83tzYlSPKMwTNvOFT3W71Wy5peBcVz9V8UuNoweHH_QQ2wzcM2-ncMl3DMQc7YwAy_sWothkAkIeRpJ79QEHIQnZEGzISONSQ4kEGqmR3wCSH_HV7X60aqZTVDWqwHoSi_8Dd4k82TEVa9psY8xsU7PhxcWmjOfmzHIFYpPcnnYzQBoB3i3i2CghPm0N3su3QYMcTt"/>
-          <button class="absolute top-unit-sm right-unit-sm w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="material-symbols-outlined text-primary scale-75">favorite</span>
-          </button>
-        </div>
-        <h4 class="font-label-md text-label-md uppercase text-primary">Hibiscus Mahajad</h4>
-        <p class="text-label-sm text-on-surface-variant">MAISON CRIVELLI • $28.00 / 5ml</p>
-      </a>
-
-      <!-- Card 4 -->
       <a href="product.html?f=oud" class="group block">
-        <div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-unit-sm relative">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Oud for Greatness" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlKE5ahNL_DQsyLGkSf-AGpjv5h9JI5zqWFayommDyeMxLV1v7doj0v8MC-Fv9hMQwfw26R3F6jxJ-R3MVdX5F6EFRPKhxhynVbTQ1RgTp_BJFnMGDLyMPokf2TKb4CeFbLkNKW7tginjMaXCezUbNXTyJ3wV7uR21V5Bn2q3GkivpRXtR-LhAfjmjbrDy7ZoJEGNr4VHKXu26vzpLfBccJQoQ6-ZIsSCaIr2avvB9oSKTWwwK2T8"/>
-          <button class="absolute top-unit-sm right-unit-sm w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="material-symbols-outlined text-primary scale-75">favorite</span>
-          </button>
-        </div>
-        <h4 class="font-label-md text-label-md uppercase text-primary">Oud For Greatness</h4>
-        <p class="text-label-sm text-on-surface-variant">INITIO • $36.00 / 5ml</p>
+        <div class="aspect-[3/4] bg-[#efeded] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Oud for Greatness" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlKE5ahNL_DQsyLGkSf-AGpjv5h9JI5zqWFayommDyeMxLV1v7doj0v8MC-Fv9hMQwfw26R3F6jxJ-R3MVdX5F6EFRPKhxhynVbTQ1RgTp_BJFnMGDLyMPokf2TKb4CeFbLkNKW7tginjMaXCezUbNXTyJ3wV7uR21V5Bn2q3GkivpRXtR-LhAfjmjbrDy7ZoJEGNr4VHKXu26vzpLfBccJQoQ6-ZIsSCaIr2avvB9oSKTWwwK2T8"/></div>
+        <p class="text-sm font-semibold uppercase text-black" style="font-family:Manrope">Oud For Greatness</p>
+        <p class="text-xs text-[#444748]" style="font-family:Manrope">INITIO • $36 / 5ml</p>
       </a>
-
-      <!-- Card 5 -->
       <a href="product.html?f=oudsilk" class="group block">
-        <div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-unit-sm relative">
-          <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
-          <button class="absolute top-unit-sm right-unit-sm w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="material-symbols-outlined text-primary scale-75">favorite</span>
-          </button>
-        </div>
-        <h4 class="font-label-md text-label-md uppercase text-primary">Oud Silk</h4>
-        <p class="text-label-sm text-on-surface-variant">VENCY ATELIER • $42.00 / 5ml</p>
+        <div class="aspect-[3/4] bg-[#efeded] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/></div>
+        <p class="text-sm font-semibold uppercase text-black" style="font-family:Manrope">Oud Silk</p>
+        <p class="text-xs text-[#444748]" style="font-family:Manrope">VENCY ATELIER • $42 / 5ml</p>
       </a>
-
+      <a href="product.html?f=rouge54" class="group block">
+        <div class="aspect-[3/4] bg-[#efeded] overflow-hidden rounded-lg mb-2"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Hibiscus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBrf1OBKrwbPOZAJ4HWXVj_59g1Rkg0bHDfQZAEfBf6aqZF9-83tzYlSPKMwTNvOFT3W71Wy5peBcVz9V8UuNoweHH_QQ2wzcM2-ncMl3DMQc7YwAy_sWothkAkIeRpJ79QEHIQnZEGzISONSQ4kEGqmR3wCSH_HV7X60aqZTVDWqwHoSi_8Dd4k82TEVa9psY8xsU7PhxcWmjOfmzHIFYpPcnnYzQBoB3i3i2CghPm0N3su3QYMcTt"/></div>
+        <p class="text-sm font-semibold uppercase text-black" style="font-family:Manrope">Hibiscus Mahajad</p>
+        <p class="text-xs text-[#444748]" style="font-family:Manrope">MAISON CRIVELLI • $28 / 5ml</p>
+      </a>
     </div>
   </section>
-
 </main>
-
-<!-- Bottom Nav -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-8 bg-surface/80 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] z-50">
-  <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">auto_awesome</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Atelier</span>
-  </a>
-  <a href="discover.html" class="flex flex-col items-center justify-center text-primary border-t-2 border-primary pt-2 transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">search</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Discover</span>
-  </a>
-  <a href="decants.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">experiment</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Decants</span>
-  </a>
-  <a href="profile.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">person</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Perfil</span>
-  </a>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-[20px] pb-8 bg-[#fbf9f9]/80 backdrop-blur-md border-t border-[#c4c7c7]/30 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] z-50">
+  <a href="index.html" class="flex flex-col items-center justify-center text-[#444748] pt-2 hover:text-black"><span class="material-symbols-outlined">auto_awesome</span><span class="text-[12px] font-medium uppercase tracking-tight" style="font-family:Manrope">Atelier</span></a>
+  <a href="discover.html" class="flex flex-col items-center justify-center text-black border-t-2 border-black pt-2"><span class="material-symbols-outlined">search</span><span class="text-[12px] font-medium uppercase tracking-tight" style="font-family:Manrope">Discover</span></a>
+  <a href="decants.html" class="flex flex-col items-center justify-center text-[#444748] pt-2 hover:text-black"><span class="material-symbols-outlined">experiment</span><span class="text-[12px] font-medium uppercase tracking-tight" style="font-family:Manrope">Decants</span></a>
+  <a href="profile.html" class="flex flex-col items-center justify-center text-[#444748] pt-2 hover:text-black"><span class="material-symbols-outlined">person</span><span class="text-[12px] font-medium uppercase tracking-tight" style="font-family:Manrope">Perfil</span></a>
 </nav>
-
-<script>
-function toggleBubble(el) {
-  el.classList.toggle('bg-primary');
-  el.classList.toggle('text-on-primary');
-  el.classList.toggle('bg-white');
-}
-function clearBubbles() {
-  document.querySelectorAll('.scent-bubble').forEach(b => {
-    b.classList.remove('bg-primary', 'text-on-primary');
-    b.classList.add('bg-white');
-  });
-}
-</script>
-</body>
-</html>
+<script>function toggleBubble(el){el.classList.toggle('bg-black');el.classList.toggle('text-white');el.classList.toggle('bg-white')}function clearBubbles(){document.querySelectorAll('.scent-bubble').forEach(b=>{b.classList.remove('bg-black','text-white');b.classList.add('bg-white')})}</script>
+</body></html>
