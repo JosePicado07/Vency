@@ -11,14 +11,57 @@
   *,*::before,*::after{box-sizing:border-box}
   body{background:#fbf9f9;color:#1b1c1c;-webkit-font-smoothing:antialiased;font-family:'Manrope',sans-serif;min-height:100dvh;overflow-x:hidden}
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;line-height:1}
-  .nav-bar{padding-bottom:max(32px,env(safe-area-inset-bottom))}
   .cta-bar{padding-bottom:max(16px,env(safe-area-inset-bottom))}
 </style>
 </head>
 <body>
 
+<!-- Overlay del menú -->
+<div id="menu-overlay" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity"></div>
+<!-- Drawer lateral -->
+<div id="side-menu" class="fixed top-0 left-0 h-full z-[70] bg-white flex flex-col" style="width:280px;transform:translateX(-100%);transition:transform 0.3s ease">
+  <div class="flex justify-between items-center px-6 py-5 border-b border-[#c4c7c7]/40">
+    <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;letter-spacing:0.12em" class="uppercase text-black">Vency Atelier</span>
+    <button onclick="closeMenu()" class="w-10 h-10 flex items-center justify-center"><span class="material-symbols-outlined text-black">close</span></button>
+  </div>
+  <div class="flex flex-col px-6 py-4 flex-1">
+    <a href="index.html" class="flex justify-between items-center py-4 border-b border-[#c4c7c7]/30 group">
+      <span style="font-family:'Playfair Display',serif;font-size:19px" class="text-black group-hover:opacity-60 transition-opacity">La Colección</span>
+      <span class="material-symbols-outlined text-[#c4c7c7]" style="font-size:18px">arrow_forward</span>
+    </a>
+    <a href="discover.html" class="flex justify-between items-center py-4 border-b border-[#c4c7c7]/30 group">
+      <span style="font-family:'Playfair Display',serif;font-size:19px" class="text-black group-hover:opacity-60 transition-opacity">Descubrir</span>
+      <span class="material-symbols-outlined text-[#c4c7c7]" style="font-size:18px">arrow_forward</span>
+    </a>
+    <a href="decants.html" class="flex justify-between items-center py-4 border-b border-[#c4c7c7]/30 group">
+      <span style="font-family:'Playfair Display',serif;font-size:19px" class="text-black group-hover:opacity-60 transition-opacity">Decants</span>
+      <span class="material-symbols-outlined text-[#c4c7c7]" style="font-size:18px">arrow_forward</span>
+    </a>
+    <a href="bag.html" class="flex justify-between items-center py-4 border-b border-[#c4c7c7]/30 group">
+      <span style="font-family:'Playfair Display',serif;font-size:19px" class="text-black group-hover:opacity-60 transition-opacity">Tu Bolsa</span>
+      <span class="material-symbols-outlined text-[#c4c7c7]" style="font-size:18px">arrow_forward</span>
+    </a>
+    <a href="profile.html" class="flex justify-between items-center py-4 border-b border-[#c4c7c7]/30 group">
+      <span style="font-family:'Playfair Display',serif;font-size:19px" class="text-black group-hover:opacity-60 transition-opacity">Mi Perfil</span>
+      <span class="material-symbols-outlined text-[#c4c7c7]" style="font-size:18px">arrow_forward</span>
+    </a>
+  </div>
+  <div class="px-6 py-6 border-t border-[#c4c7c7]/30">
+    <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em" class="uppercase text-[#747878] mb-3">Contáctenos</p>
+    <a href="https://instagram.com/vency.cr" target="_blank" class="flex items-center gap-3 py-2 hover:opacity-60 transition-opacity">
+      <span class="material-symbols-outlined text-black" style="font-size:18px">photo_camera</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">@vency.cr</span>
+    </a>
+    <a href="https://wa.me/50600000000" target="_blank" class="flex items-center gap-3 py-2 hover:opacity-60 transition-opacity">
+      <span class="material-symbols-outlined text-black" style="font-size:18px">chat</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">WhatsApp</span>
+    </a>
+    <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#c4c7c7] mt-4">Costa Rica · Atelier de Creación Sensorial</p>
+  </div>
+</div>
+
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#c4c7c7]/30 flex justify-between items-center px-5 py-4">
-  <button class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity" aria-label="Menú">
+  <button onclick="openMenu()" class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity" aria-label="Menú">
     <span class="material-symbols-outlined">menu</span>
   </button>
   <h1 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;letter-spacing:0.18em" class="uppercase text-black">Vency Atelier</h1>
@@ -89,7 +132,7 @@
             <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Prueba — 10–15 aplicaciones</p>
           </div>
         </div>
-        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$12</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">₡6.000</p>
       </div>
 
       <div class="flex justify-between items-center py-5 border-b border-[#c4c7c7]/20">
@@ -105,7 +148,7 @@
             <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Popular — 25–35 aplicaciones</p>
           </div>
         </div>
-        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$42</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">₡22.000</p>
       </div>
 
       <div class="flex justify-between items-center py-5 border-b border-[#c4c7c7]/20">
@@ -116,7 +159,7 @@
             <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Favorito — 50–70 aplicaciones</p>
           </div>
         </div>
-        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$75</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">₡39.000</p>
       </div>
 
       <div class="flex justify-between items-center py-5">
@@ -127,7 +170,7 @@
             <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Premium — 75–100 aplicaciones</p>
           </div>
         </div>
-        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$105</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">₡55.000</p>
       </div>
 
     </div>
@@ -143,7 +186,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Vency Rouge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Vency Rouge</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
       <a href="product.html?f=citrus" class="group block">
@@ -151,7 +194,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Citrus Enigma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5s3CdDXekCakicVuz578NilmB90Krgh2XdKkMezJaXKsdaJZTsBahrZuZ0r8N5ZNTkqjsetI4xRvWw92RRNys6_zLIBLDr571bEuJG__M5Ibf3cPv6OZS0eX48Ujhv51VGeT2US1KgcPUkzNuSlnj_N4o5IkcPNMqgxOLWHveOM4lDyBKStrJFh7_Jdiw_KY-iKbXPPYk6y8pbiJCZ4sW0r1Mjj4kTVMt3kDNU6x_B7y-rP1mxKf"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Citrus Enigma</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
       <a href="product.html?f=carmesi" class="group block">
@@ -159,7 +202,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Enigma Carmesí" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Enigma Carmesí</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
       <a href="product.html?f=rouge54" class="group block">
@@ -167,7 +210,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Rouge 5.4</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
       <a href="product.html?f=naxos" class="group block">
@@ -175,7 +218,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Naxos CR" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjbvitvyr2sm13oKpITQWgIiFKXJ49x360si-FqhHdtmXUdOTbcdhNvMKJW8jw-t6AwgDIDmVrk9puujskrkGevIlsZiYAT0gUKrf923gIwRKQtY9BdtgjSj-wk_aIFvSF9WymhWCgzFXzG1Se4JWujT9Dk8UKIL-BspnI8LxDgkcqb9mmZb3tHQyw5eTEjm-5VFZyt6PUnd2u9o5b49tXh2Sdr87zeXd-b9DasSHfHLtimv66H46"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Naxos CR</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
       <a href="product.html?f=silver8" class="group block">
@@ -183,7 +226,7 @@
           <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Silver 8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlKE5ahNL_DQsyLGkSf-AGpjv5h9JI5zqWFayommDyeMxLV1v7doj0v8MC-Fv9hMQwfw26R3F6jxJ-R3MVdX5F6EFRPKhxhynVbTQ1RgTp_BJFnMGDLyMPokf2TKb4CeFbLkNKW7tginjMaXCezUbNXTyJ3wV7uR21V5Bn2q3GkivpRXtR-LhAfjmjbrDy7ZoJEGNr4VHKXu26vzpLfBccJQoQ6-ZIsSCaIr2avvB9oSKTWwwK2T8"/>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Silver 8</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde ₡6.000</p>
       </a>
 
     </div>
@@ -216,24 +259,39 @@
 </div>
 
 <!-- Navegación inferior -->
-<nav class="nav-bar fixed bottom-0 left-0 w-full flex justify-around items-center px-5 pt-3 bg-white/92 backdrop-blur-md border-t border-[#c4c7c7]/40 z-50">
-  <a href="index.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
-    <span class="material-symbols-outlined text-xl">auto_awesome</span>
-    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Atelier</span>
-  </a>
-  <a href="discover.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
-    <span class="material-symbols-outlined text-xl">search</span>
-    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Descubrir</span>
-  </a>
-  <a href="decants.html" class="flex flex-col items-center gap-1 text-black border-t-2 border-black pt-1 px-3 -mt-3">
-    <span class="material-symbols-outlined text-xl">experiment</span>
-    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Decants</span>
-  </a>
-  <a href="profile.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
-    <span class="material-symbols-outlined text-xl">person</span>
-    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Perfil</span>
-  </a>
+<nav class="fixed bottom-0 left-0 w-full bg-white border-t border-[#c4c7c7]/40 z-50" style="padding-bottom:max(20px,env(safe-area-inset-bottom))">
+  <div class="flex">
+    <a href="index.html" class="flex-1 flex flex-col items-center py-3">
+      <span class="material-symbols-outlined" style="color:#747878">auto_awesome</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.07em;color:#747878;margin-top:2px" class="uppercase">Atelier</span>
+    </a>
+    <a href="discover.html" class="flex-1 flex flex-col items-center py-3">
+      <span class="material-symbols-outlined" style="color:#747878">search</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.07em;color:#747878;margin-top:2px" class="uppercase">Descubrir</span>
+    </a>
+    <a href="decants.html" class="flex-1 flex flex-col items-center py-3 relative">
+      <div class="absolute top-0 inset-x-0 h-0.5 bg-black"></div>
+      <span class="material-symbols-outlined text-black">experiment</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.07em;margin-top:2px" class="uppercase text-black">Decants</span>
+    </a>
+    <a href="profile.html" class="flex-1 flex flex-col items-center py-3">
+      <span class="material-symbols-outlined" style="color:#747878">person</span>
+      <span style="font-family:'Manrope',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.07em;color:#747878;margin-top:2px" class="uppercase">Perfil</span>
+    </a>
+  </div>
 </nav>
 
+<script>
+function openMenu(){
+  document.getElementById('side-menu').style.transform='translateX(0)';
+  document.getElementById('menu-overlay').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  document.getElementById('side-menu').style.transform='translateX(-100%)';
+  document.getElementById('menu-overlay').classList.add('hidden');
+  document.body.style.overflow='';
+}
+</script>
 </body>
 </html>
