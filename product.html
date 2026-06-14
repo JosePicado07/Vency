@@ -3,24 +3,39 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vency Rouge | Vency Atelier</title>
+<title>Producto | Vency Atelier</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{extend:{
+    colors:{
+      "surface":"#fbf9f9","on-surface":"#1b1c1c","on-surface-variant":"#444748",
+      "outline":"#747878","outline-variant":"#c4c7c7","primary":"#000000",
+      "secondary":"#735c00","secondary-container":"#fed65b","background":"#fbf9f9"
+    },
+    borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"}
+  }}
+}
+</script>
 <style>
   *,*::before,*::after{box-sizing:border-box}
   body{background:#fbf9f9;color:#1b1c1c;-webkit-font-smoothing:antialiased;font-family:'Manrope',sans-serif;min-height:100dvh;overflow-x:hidden}
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;line-height:1}
-  .size-chip{border:1px solid #c4c7c7;padding:10px 18px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:all 0.2s ease;cursor:pointer;background:#fbf9f9;color:#444748}
-  .size-chip.selected,.size-chip:active{background:#000;color:#fff;border-color:#000}
-  .note-ring{box-shadow:0 0 0 1px rgba(115,92,0,0.2)}
+  .size-chip{border:1px solid #c4c7c7;padding:10px 18px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;transition:all 0.2s;cursor:pointer;background:#fbf9f9;color:#444748}
+  .size-chip.selected{background:#000;color:#fff;border-color:#000}
   .badge-propia{background:#f5f3f3;border:1px solid #c4c7c7;color:#1b1c1c}
+  .badge-nicho{background:#e4e2e2;border:1px solid #c4c7c7;color:#1b1c1c}
+  .badge-ultra{background:#000;color:#fff}
+  .badge-inspo{background:#fed65b;color:#241a00;font-style:italic}
 </style>
 </head>
 <body>
 
 <!-- Overlay del menú -->
-<div id="menu-overlay" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity"></div>
+<div id="menu-overlay" onclick="closeMenu()" class="fixed inset-0 bg-black/50 z-[60] hidden"></div>
 <!-- Drawer lateral -->
 <div id="side-menu" class="fixed top-0 left-0 h-full z-[70] bg-white flex flex-col" style="width:280px;transform:translateX(-100%);transition:transform 0.3s ease">
   <div class="flex justify-between items-center px-6 py-5 border-b border-[#c4c7c7]/40">
@@ -68,7 +83,7 @@
     <span class="material-symbols-outlined">arrow_back</span>
   </button>
   <h1 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;letter-spacing:0.18em" class="uppercase text-black">Vency Atelier</h1>
-  <a href="bag.html" class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity relative" aria-label="Bolsa">
+  <a href="bag.html" class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity" aria-label="Bolsa">
     <span class="material-symbols-outlined">shopping_bag</span>
   </a>
 </header>
@@ -77,11 +92,9 @@
 
   <!-- Imagen hero -->
   <div class="aspect-[4/5] w-full overflow-hidden bg-[#f5f3f3] relative">
-    <img alt="Vency Rouge" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
-    <div class="absolute top-4 left-4">
-      <span class="badge-propia px-3 py-1" style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em" class="text-black uppercase">CREACIÓN PROPIA</span>
-    </div>
-    <button onclick="toggleWishlist()" id="wishlist-btn" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/85 backdrop-blur shadow-sm flex items-center justify-center" aria-label="Favorito">
+    <img id="product-img" alt="" class="w-full h-full object-cover"/>
+    <div id="product-badges" class="absolute top-4 left-4 flex flex-col gap-2"></div>
+    <button onclick="toggleWishlist()" id="wishlist-btn" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-sm" aria-label="Favorito">
       <span class="material-symbols-outlined text-black" id="wishlist-icon">favorite_border</span>
     </button>
   </div>
@@ -90,17 +103,15 @@
   <div class="px-5 pt-6 pb-4">
     <div class="flex justify-between items-start gap-4">
       <div class="flex-1">
-        <h2 style="font-family:'Playfair Display',serif;font-size:30px;font-weight:600;line-height:1.15" class="text-black">Vency Rouge</h2>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:0.08em" class="uppercase text-[#444748] mt-1">Vency Atelier · Creación Propia</p>
+        <h2 id="product-name" style="font-family:'Playfair Display',serif;font-size:30px;font-weight:600;line-height:1.15" class="text-black"></h2>
+        <p id="product-subtitle" style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:0.08em" class="uppercase text-[#444748] mt-1"></p>
       </div>
       <div class="text-right flex-shrink-0">
-        <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500" class="text-black" id="current-price">₡22.000</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:0.04em" class="uppercase text-[#444748]" id="current-label">Decant 5ml</p>
+        <p id="current-price" style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500" class="text-black"></p>
+        <p id="current-label" style="font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:0.04em" class="uppercase text-[#444748]"></p>
       </div>
     </div>
-    <p style="font-family:'Manrope',sans-serif;font-size:15px;line-height:1.65" class="text-[#444748] mt-4">
-      Una fragancia que captura la esencia del romance oscuro: pétalos de rosa damascena entretejidos con granada y almizcle, anclados por un oud dorado de profunda calidez. Intensa, memorable, completamente propia.
-    </p>
+    <p id="product-desc" style="font-family:'Manrope',sans-serif;font-size:15px;line-height:1.65" class="text-[#444748] mt-4"></p>
   </div>
 
   <!-- Pirámide olfativa -->
@@ -108,28 +119,28 @@
     <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em" class="uppercase text-black mb-6">Las Notas</p>
     <div class="grid grid-cols-3 gap-4 text-center">
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#fdf9f1] border border-yellow-200/60 note-ring mx-auto mb-3 flex items-center justify-center">
-          <span class="text-lg">🌹</span>
+        <div id="note-top-ring" class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center border">
+          <span id="note-top-emoji" class="text-lg"></span>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em" class="uppercase text-[#444748] mb-1">Salida</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">Bergamota</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Pimienta Rosa</p>
+        <p id="note-top-name" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
+        <p id="note-top-sub" style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]"></p>
       </div>
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#fdf2f2] border border-pink-200/60 note-ring mx-auto mb-3 flex items-center justify-center">
-          <span class="text-lg">🌸</span>
+        <div id="note-heart-ring" class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center border">
+          <span id="note-heart-emoji" class="text-lg"></span>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em" class="uppercase text-[#444748] mb-1">Corazón</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">Rosa Damascena</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Granada · Jazmín</p>
+        <p id="note-heart-name" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
+        <p id="note-heart-sub" style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]"></p>
       </div>
       <div>
-        <div class="w-12 h-12 rounded-full bg-[#f9f5f0] border border-amber-200/60 note-ring mx-auto mb-3 flex items-center justify-center">
-          <span class="text-lg">🪵</span>
+        <div id="note-base-ring" class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center border">
+          <span id="note-base-emoji" class="text-lg"></span>
         </div>
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em" class="uppercase text-[#444748] mb-1">Base</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">Oud Dorado</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Vainilla · Ámbar</p>
+        <p id="note-base-name" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
+        <p id="note-base-sub" style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]"></p>
       </div>
     </div>
   </div>
@@ -140,12 +151,7 @@
       <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em" class="uppercase text-black">Elige tu Tamaño</p>
       <a href="decants.html" style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600" class="text-[#735c00] underline underline-offset-2">Guía de tamaños</a>
     </div>
-    <div class="flex flex-wrap gap-2">
-      <button class="size-chip rounded-sm" data-price="₡6.000" data-label="Decant 2ml" onclick="selectSize(this)">2ml — ₡6.000</button>
-      <button class="size-chip selected rounded-sm" data-price="₡22.000" data-label="Decant 5ml" onclick="selectSize(this)">5ml — ₡22.000</button>
-      <button class="size-chip rounded-sm" data-price="₡39.000" data-label="Decant 10ml" onclick="selectSize(this)">10ml — ₡39.000</button>
-      <button class="size-chip rounded-sm" data-price="₡127.000" data-label="Frasco 30ml" onclick="selectSize(this)">30ml — ₡127.000</button>
-    </div>
+    <div id="size-chips-container" class="flex flex-wrap gap-2"></div>
   </div>
 
   <!-- Características -->
@@ -154,15 +160,15 @@
     <div class="grid grid-cols-3 gap-3">
       <div class="bg-[#f5f3f3] p-4 text-center">
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.07em" class="uppercase text-[#444748] mb-1">Familia</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">Floral Oriental</p>
+        <p id="char-familia" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
       </div>
       <div class="bg-[#f5f3f3] p-4 text-center">
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.07em" class="uppercase text-[#444748] mb-1">Proyección</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">Alta</p>
+        <p id="char-proyeccion" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
       </div>
       <div class="bg-[#f5f3f3] p-4 text-center">
         <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.07em" class="uppercase text-[#444748] mb-1">Duración</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black">10–14h</p>
+        <p id="char-duracion" style="font-family:'Manrope',sans-serif;font-size:13px" class="text-black"></p>
       </div>
     </div>
   </div>
@@ -170,28 +176,13 @@
   <!-- También te puede gustar -->
   <div class="px-5 py-6 border-t border-[#c4c7c7]/30">
     <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em" class="uppercase text-black mb-4">También te Puede Gustar</p>
-    <div class="grid grid-cols-2 gap-4">
-      <a href="product.html?f=carmesi" class="group block">
-        <div class="aspect-[3/4] bg-[#e9e8e7] overflow-hidden mb-2">
-          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Enigma Carmesí" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
-        </div>
-        <p style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em" class="uppercase text-black">Enigma Carmesí</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Desde ₡23.000</p>
-      </a>
-      <a href="product.html?f=rouge54" class="group block">
-        <div class="aspect-[3/4] bg-[#e9e8e7] overflow-hidden mb-2">
-          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
-        </div>
-        <p style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em" class="uppercase text-black">Rouge 5.4</p>
-        <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Desde ₡20.000</p>
-      </a>
-    </div>
+    <div id="related-grid" class="grid grid-cols-2 gap-4"></div>
   </div>
 
 </main>
 
 <!-- CTA fijo inferior -->
-<div class="fixed bottom-0 left-0 w-full bg-white/95 border-t border-[#c4c7c7]/40 px-5 py-4 z-50" style="padding-bottom:max(16px,env(safe-area-inset-bottom))">
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-[#c4c7c7]/40 px-5 py-4 z-50" style="padding-bottom:max(16px,env(safe-area-inset-bottom))">
   <div class="flex gap-3">
     <button onclick="addToCart()" id="add-btn" class="flex-1 bg-black text-white py-4 text-center transition-opacity hover:opacity-80 active:opacity-70" style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em">
       AÑADIR AL RITUAL
@@ -203,6 +194,126 @@
 </div>
 
 <script>
+const IMGS = {
+  vencyrouge:'https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW',
+  citrus:'https://lh3.googleusercontent.com/aida-public/AB6AXuAD5s3CdDXekCakicVuz578NilmB90Krgh2XdKkMezJaXKsdaJZTsBahrZuZ0r8N5ZNTkqjsetI4xRvWw92RRNys6_zLIBLDr571bEuJG__M5Ibf3cPv6OZS0eX48Ujhv51VGeT2US1KgcPUkzNuSlnj_N4o5IkcPNMqgxOLWHveOM4lDyBKStrJFh7_Jdiw_KY-iKbXPPYk6y8pbiJCZ4sW0r1Mjj4kTVMt3kDNU6x_B7y-rP1mxKf',
+  carmesi:'https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i',
+  rouge54:'https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T',
+  naxos:'https://lh3.googleusercontent.com/aida-public/AB6AXuALjbvitvyr2sm13oKpITQWgIiFKXJ49x360si-FqhHdtmXUdOTbcdhNvMKJW8jw-t6AwgDIDmVrk9puujskrkGevIlsZiYAT0gUKrf923gIwRKQtY9BdtgjSj-wk_aIFvSF9WymhWCgzFXzG1Se4JWujT9Dk8UKIL-BspnI8LxDgkcqb9mmZb3tHQyw5eTEjm-5VFZyt6PUnd2u9o5b49tXh2Sdr87zeXd-b9DasSHfHLtimv66H46',
+  silver8:'https://lh3.googleusercontent.com/aida-public/AB6AXuCKlKE5ahNL_DQsyLGkSf-AGpjv5h9JI5zqWFayommDyeMxLV1v7doj0v8MC-Fv9hMQwfw26R3F6jxJ-R3MVdX5F6EFRPKhxhynVbTQ1RgTp_BJFnMGDLyMPokf2TKb4CeFbLkNKW7tginjMaXCezUbNXTyJ3wV7uR21V5Bn2q3GkivpRXtR-LhAfjmjbrDy7ZoJEGNr4VHKXu26vzpLfBccJQoQ6-ZIsSCaIr2avvB9oSKTWwwK2T8'
+};
+
+const PRODUCTS = {
+  vencyrouge:{
+    name:'Vency Rouge',subtitle:'Vency Atelier · Creación Propia',
+    badges:[{cls:'badge-propia',text:'CREACIÓN PROPIA'}],
+    desc:'Una fragancia que captura la esencia del romance oscuro: pétalos de rosa damascena entretejidos con granada y almizcle, anclados por un oud dorado de profunda calidez. Intensa, memorable, completamente propia.',
+    notes:[
+      {emoji:'🌹',bg:'#fdf9f1',border:'rgba(253,224,136,0.4)',name:'Bergamota',sub:'Pimienta Rosa'},
+      {emoji:'🌸',bg:'#fdf2f2',border:'rgba(255,182,182,0.4)',name:'Rosa Damascena',sub:'Granada · Jazmín'},
+      {emoji:'🪵',bg:'#f9f5f0',border:'rgba(253,211,160,0.4)',name:'Oud Dorado',sub:'Vainilla · Ámbar'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡22.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡39.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡127.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Floral Oriental',proyeccion:'Alta',duracion:'10–14h'},
+    related:[{key:'carmesi',name:'Enigma Carmesí',price:'₡23.000'},{key:'rouge54',name:'Rouge 5.4',price:'₡20.000'}]
+  },
+  citrus:{
+    name:'Citrus Enigma',subtitle:'Vency Atelier · Creación Propia',
+    badges:[{cls:'badge-propia',text:'CREACIÓN PROPIA'}],
+    desc:'Una explosión de luz mediterránea: bergamota siciliana y yuzu japonés que se transforman en un corazón verde y amaderado. Fresco, enigmático, con una base de vetiver terroso que lo ancla con elegancia.',
+    notes:[
+      {emoji:'🍋',bg:'#fffff0',border:'rgba(255,255,170,0.5)',name:'Yuzu · Bergamota',sub:'Limón de Amalfi'},
+      {emoji:'🍃',bg:'#f0f9f0',border:'rgba(170,230,170,0.4)',name:'Vetiver Verde',sub:'Musgo · Cedro'},
+      {emoji:'🌿',bg:'#f5f5f0',border:'rgba(210,230,200,0.4)',name:'Madera Blanca',sub:'Almizcle Limpio'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡18.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡32.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡101.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Cítrico Amaderado',proyeccion:'Media',duracion:'8–12h'},
+    related:[{key:'silver8',name:'Silver 8',price:'₡17.000'},{key:'carmesi',name:'Enigma Carmesí',price:'₡23.000'}]
+  },
+  carmesi:{
+    name:'Enigma Carmesí',subtitle:'Vency Atelier · Creación Propia',
+    badges:[{cls:'badge-propia',text:'CREACIÓN PROPIA'}],
+    desc:'Un enigma vestido de carmesí: la violeta oscura desciende hacia el palo santo y el incienso sagrado, envueltos en un sándalo cremoso. Místico, profundo, para quienes buscan lo extraordinario.',
+    notes:[
+      {emoji:'💜',bg:'#faf0ff',border:'rgba(220,180,255,0.4)',name:'Violeta Oscura',sub:'Ciruela Negra'},
+      {emoji:'🕯️',bg:'#f5f0f5',border:'rgba(200,170,220,0.4)',name:'Palo Santo',sub:'Incienso · Iris'},
+      {emoji:'🪵',bg:'#f9f5f0',border:'rgba(220,200,170,0.4)',name:'Sándalo',sub:'Cachemira · Ámbar'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡23.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡41.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡135.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Floral Amaderado',proyeccion:'Alta',duracion:'10–14h'},
+    related:[{key:'vencyrouge',name:'Vency Rouge',price:'₡22.000'},{key:'naxos',name:'Naxos CR',price:'₡25.000'}]
+  },
+  rouge54:{
+    name:'Rouge 5.4',subtitle:'Inspirado en Baccarat Rouge 540 · MFK',
+    badges:[{cls:'badge-ultra',text:'INSPIRACIÓN ULTRA NICHO'},{cls:'badge-inspo',text:'Baccarat Rouge 540 · MFK'}],
+    desc:'La interpretación propia de uno de los perfumes más icónicos del siglo XXI. Azafrán y jazmín bailando sobre resinas ámbar y cedro japonés. Una firma olfativa que trasciende géneros y temporadas.',
+    notes:[
+      {emoji:'🌼',bg:'#fffaf0',border:'rgba(255,230,150,0.4)',name:'Azafrán · Jazmín',sub:'Néroli'},
+      {emoji:'🌲',bg:'#f5f8f0',border:'rgba(180,220,180,0.4)',name:'Resina de Abeto',sub:'Amberwood'},
+      {emoji:'🪨',bg:'#f8f5f2',border:'rgba(220,210,200,0.4)',name:'Cedro Japonés',sub:'Almizcle Blanco'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡20.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡36.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡109.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Floral Ambarino',proyeccion:'Muy Alta',duracion:'12–16h'},
+    related:[{key:'naxos',name:'Naxos CR',price:'₡25.000'},{key:'vencyrouge',name:'Vency Rouge',price:'₡22.000'}]
+  },
+  naxos:{
+    name:'Naxos CR',subtitle:'Inspirado en Naxos · Xerjoff',
+    badges:[{cls:'badge-ultra',text:'INSPIRACIÓN ULTRA NICHO'},{cls:'badge-inspo',text:'Naxos · Xerjoff'}],
+    desc:'Un homenaje al lujo mediterráneo de Xerjoff: tabaco virginia dorado envuelto en jazmín nocturno y haba tonka con notas de lavanda y vainilla. Sensual, cálido, absolutamente adictivo.',
+    notes:[
+      {emoji:'🍋',bg:'#fffff5',border:'rgba(255,255,180,0.4)',name:'Bergamota · Limón',sub:'Lavanda'},
+      {emoji:'🌸',bg:'#fff8f5',border:'rgba(255,210,190,0.4)',name:'Tabaco Virginia',sub:'Jazmín Nocturno'},
+      {emoji:'🍯',bg:'#fdf7f0',border:'rgba(255,220,160,0.4)',name:'Haba Tonka',sub:'Vainilla · Sándalo'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡25.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡45.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡146.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Oriental Gourmand',proyeccion:'Alta',duracion:'10–14h'},
+    related:[{key:'rouge54',name:'Rouge 5.4',price:'₡20.000'},{key:'carmesi',name:'Enigma Carmesí',price:'₡23.000'}]
+  },
+  silver8:{
+    name:'Silver 8',subtitle:'Inspirado en Silver Mountain Water · Creed',
+    badges:[{cls:'badge-nicho',text:'INSPIRACIÓN NICHO'},{cls:'badge-inspo',text:'Silver Mountain Water · Creed'}],
+    desc:'La pureza del agua de glaciar alpino reinterpretada: neroli brillante y té verde japonés que fluyen sobre un corazón de grosella negra, anclados por almizcle blanco y sándalo marino. Limpio, fresco, imperecedero.',
+    notes:[
+      {emoji:'🌸',bg:'#f8fff8',border:'rgba(180,240,200,0.4)',name:'Neroli · Bergamota',sub:'Té Verde'},
+      {emoji:'🍃',bg:'#f0fff8',border:'rgba(160,240,200,0.4)',name:'Té Negro',sub:'Grosella Negra'},
+      {emoji:'🌊',bg:'#f0f8ff',border:'rgba(180,210,255,0.4)',name:'Almizcle Blanco',sub:'Sándalo · Cedro'}
+    ],
+    chips:[
+      {ml:'2ml',price:'₡6.000',label:'Decant 2ml'},
+      {ml:'5ml',price:'₡17.000',label:'Decant 5ml',sel:true},
+      {ml:'10ml',price:'₡30.000',label:'Decant 10ml'},
+      {ml:'30ml',price:'₡94.000',label:'Frasco 30ml'}
+    ],
+    chars:{familia:'Acuático Fresco',proyeccion:'Media',duracion:'6–10h'},
+    related:[{key:'citrus',name:'Citrus Enigma',price:'₡18.000'},{key:'rouge54',name:'Rouge 5.4',price:'₡20.000'}]
+  }
+};
+
 function openMenu(){
   document.getElementById('side-menu').style.transform='translateX(0)';
   document.getElementById('menu-overlay').classList.remove('hidden');
@@ -221,15 +332,70 @@ function selectSize(el){
 }
 function toggleWishlist(){
   const ic=document.getElementById('wishlist-icon');
-  ic.textContent=ic.textContent==='favorite_border'?'favorite':'favorite_border';
-  ic.style.color=ic.textContent==='favorite'?'#e74c3c':'';
+  const active=ic.textContent==='favorite_border';
+  ic.textContent=active?'favorite':'favorite_border';
+  ic.style.color=active?'#c0392b':'';
 }
 function addToCart(){
   const btn=document.getElementById('add-btn');
-  btn.textContent='¡AÑADIDO AL RITUAL!';
+  const orig=btn.textContent;
+  btn.textContent='✓ AÑADIDO AL RITUAL';
   btn.style.opacity='0.7';
-  setTimeout(()=>{btn.textContent='AÑADIR AL RITUAL';btn.style.opacity='';},1800);
+  setTimeout(()=>{btn.textContent=orig;btn.style.opacity='';},1800);
 }
+
+(function init(){
+  const key=new URLSearchParams(window.location.search).get('f')||'vencyrouge';
+  const p=PRODUCTS[key]||PRODUCTS.vencyrouge;
+  const imgKey=key in IMGS?key:'vencyrouge';
+
+  document.title=p.name+' | Vency Atelier';
+
+  const img=document.getElementById('product-img');
+  img.src=IMGS[imgKey]; img.alt=p.name;
+
+  const badgeEl=document.getElementById('product-badges');
+  badgeEl.innerHTML=p.badges.map(b=>
+    `<span class="${b.cls} px-3 py-1" style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.08em">${b.text}</span>`
+  ).join('');
+
+  document.getElementById('product-name').textContent=p.name;
+  document.getElementById('product-subtitle').textContent=p.subtitle;
+  document.getElementById('product-desc').textContent=p.desc;
+
+  const noteIds=['top','heart','base'];
+  p.notes.forEach((n,i)=>{
+    const id=noteIds[i];
+    const ring=document.getElementById('note-'+id+'-ring');
+    ring.style.background=n.bg;
+    ring.style.borderColor=n.border;
+    document.getElementById('note-'+id+'-emoji').textContent=n.emoji;
+    document.getElementById('note-'+id+'-name').textContent=n.name;
+    document.getElementById('note-'+id+'-sub').textContent=n.sub;
+  });
+
+  const selChip=p.chips.find(c=>c.sel)||p.chips[1];
+  document.getElementById('current-price').textContent=selChip.price;
+  document.getElementById('current-label').textContent=selChip.label;
+
+  document.getElementById('size-chips-container').innerHTML=p.chips.map(c=>
+    `<button class="size-chip rounded-sm${c.sel?' selected':''}" data-price="${c.price}" data-label="${c.label}" onclick="selectSize(this)">${c.ml} — ${c.price}</button>`
+  ).join('');
+
+  document.getElementById('char-familia').textContent=p.chars.familia;
+  document.getElementById('char-proyeccion').textContent=p.chars.proyeccion;
+  document.getElementById('char-duracion').textContent=p.chars.duracion;
+
+  document.getElementById('related-grid').innerHTML=p.related.map(r=>
+    `<a href="product.html?f=${r.key}" class="group block">
+      <div class="aspect-[3/4] bg-[#e9e8e7] overflow-hidden mb-2">
+        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="${r.name}" src="${IMGS[r.key]||''}"/>
+      </div>
+      <p style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em" class="uppercase text-black">${r.name}</p>
+      <p style="font-family:'Manrope',sans-serif;font-size:11px" class="text-[#444748]">Desde ${r.price}</p>
+    </a>`
+  ).join('');
+})();
 </script>
 </body>
 </html>
