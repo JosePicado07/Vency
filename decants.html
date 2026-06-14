@@ -7,244 +7,231 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "surface": "#fbf9f9", "surface-dim": "#dbdad9", "surface-bright": "#fbf9f9",
-        "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3",
-        "surface-container": "#efeded", "surface-container-high": "#e9e8e7",
-        "surface-container-highest": "#e4e2e2", "on-surface": "#1b1c1c",
-        "on-surface-variant": "#444748", "inverse-surface": "#303031",
-        "inverse-on-surface": "#f2f0f0", "outline": "#747878",
-        "outline-variant": "#c4c7c7", "surface-tint": "#5f5e5e",
-        "primary": "#000000", "on-primary": "#ffffff",
-        "primary-container": "#1c1b1b", "on-primary-container": "#858383",
-        "inverse-primary": "#c8c6c5", "secondary": "#735c00",
-        "on-secondary": "#ffffff", "secondary-container": "#fed65b",
-        "on-secondary-container": "#745c00", "tertiary": "#000000",
-        "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-error": "#ffffff",
-        "primary-fixed": "#e5e2e1", "primary-fixed-dim": "#c8c6c5",
-        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
-        "on-secondary-fixed": "#241a00", "background": "#fbf9f9",
-        "on-background": "#1b1c1c", "surface-variant": "#e4e2e2"
-      },
-      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-      spacing: {
-        "unit-xs": "4px", "unit-sm": "8px", "unit-md": "16px",
-        "unit-lg": "24px", "unit-xl": "48px", "margin-mobile": "20px",
-        "margin-tablet": "40px", "gutter": "16px"
-      },
-      fontFamily: {
-        "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
-        "headline-md": ["Playfair Display"], "headline-sm": ["Playfair Display"],
-        "body-lg": ["Manrope"], "body-md": ["Manrope"],
-        "label-md": ["Manrope"], "label-sm": ["Manrope"]
-      },
-      fontSize: {
-        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
-        "headline-sm": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
-        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}]
-      }
-    }
-  }
-}
-</script>
 <style>
-  body { background-color: #fbf9f9; color: #1b1c1c; -webkit-font-smoothing: antialiased; min-height: max(884px, 100dvh); }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  *,*::before,*::after{box-sizing:border-box}
+  body{background:#fbf9f9;color:#1b1c1c;-webkit-font-smoothing:antialiased;font-family:'Manrope',sans-serif;min-height:100dvh;overflow-x:hidden}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;line-height:1}
+  .nav-bar{padding-bottom:max(32px,env(safe-area-inset-bottom))}
+  .cta-bar{padding-bottom:max(16px,env(safe-area-inset-bottom))}
 </style>
 </head>
-<body class="bg-background text-on-background font-body-md">
+<body>
 
-<!-- Header -->
-<header class="w-full top-0 sticky z-50 bg-background flex justify-between items-center px-margin-mobile py-unit-md">
-  <button class="text-primary hover:opacity-70 transition-opacity">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#c4c7c7]/30 flex justify-between items-center px-5 py-4">
+  <button class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity" aria-label="Menú">
     <span class="material-symbols-outlined">menu</span>
   </button>
-  <h1 class="font-headline-sm text-[18px] uppercase tracking-widest text-primary">Vency Atelier</h1>
-  <a href="bag.html" class="text-primary hover:opacity-70 transition-opacity">
+  <h1 style="font-family:'Playfair Display',serif;font-size:16px;font-weight:600;letter-spacing:0.18em" class="uppercase text-black">Vency Atelier</h1>
+  <a href="bag.html" class="w-10 h-10 flex items-center justify-center text-black hover:opacity-60 transition-opacity" aria-label="Bolsa">
     <span class="material-symbols-outlined">shopping_bag</span>
   </a>
 </header>
 
-<main class="pb-36">
+<main class="pb-44">
 
-  <!-- Hero Section -->
-  <div class="px-margin-mobile pt-unit-xl pb-unit-lg border-b border-outline-variant/30">
-    <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit-sm">Atelier de Creación Sensorial</p>
-    <h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-unit-md">El Arte del<br/><em>Decant</em></h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-lg">
-      Un decant es la forma más íntima de descubrir una fragancia. Extraemos con precisión el volumen exacto que necesitas, envasado en atomizadores de vidrio de alta calidad, para que explores sin compromisos.
+  <!-- Hero -->
+  <div class="px-5 pt-12 pb-8 border-b border-[#c4c7c7]/30">
+    <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em" class="uppercase text-[#735c00] mb-2">Atelier de Creación Sensorial</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:600;line-height:1.2" class="text-black mb-4">El Arte del<br/><em>Decant</em></h2>
+    <p style="font-family:'Manrope',sans-serif;font-size:15px;line-height:1.7" class="text-[#444748] max-w-md">
+      Un decant es la forma más íntima de descubrir una fragancia. Extraemos con precisión milimétrica el volumen exacto que necesitas, envasado en atomizadores de vidrio de alta calidad, para que explores sin compromisos ni inversiones innecesarias.
     </p>
   </div>
 
-  <!-- 3-Step Process -->
-  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-xl">Cómo Funciona</h3>
-    <div class="flex flex-col gap-unit-xl">
+  <!-- Cómo funciona -->
+  <div class="px-5 py-10 border-b border-[#c4c7c7]/30">
+    <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em" class="uppercase text-black mb-8">Cómo Funciona</p>
+    <div class="flex flex-col gap-8">
 
-      <div class="flex items-start gap-unit-lg">
-        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
-          <span class="font-headline-sm text-headline-sm text-primary">01</span>
+      <div class="flex items-start gap-5">
+        <div class="w-10 h-10 rounded-full border border-[#c4c7c7] flex items-center justify-center flex-shrink-0">
+          <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:500" class="text-black">01</span>
         </div>
         <div>
-          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Elige tu Fragancia</h4>
-          <p class="font-body-md text-body-md text-on-surface-variant">Explora nuestra colección de originales e impresiones de alta fidelidad. Selecciona el tamaño que mejor se adapte a tu ritual.</p>
+          <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500" class="text-black mb-1">Elige tu Fragancia</h4>
+          <p style="font-family:'Manrope',sans-serif;font-size:14px;line-height:1.65" class="text-[#444748]">Explora nuestra colección de creaciones propias e inspiraciones de casas nicho y ultra nicho. Selecciona el tamaño que mejor se adapte a tu ritual.</p>
         </div>
       </div>
 
-      <div class="flex items-start gap-unit-lg">
-        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
-          <span class="font-headline-sm text-headline-sm text-primary">02</span>
+      <div class="flex items-start gap-5">
+        <div class="w-10 h-10 rounded-full border border-[#c4c7c7] flex items-center justify-center flex-shrink-0">
+          <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:500" class="text-black">02</span>
         </div>
         <div>
-          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Realiza tu Pedido</h4>
-          <p class="font-body-md text-body-md text-on-surface-variant">Añade al carrito o escríbenos directamente por Instagram o WhatsApp. Cada pedido se prepara de forma artesanal bajo tu nombre.</p>
+          <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500" class="text-black mb-1">Realiza tu Pedido</h4>
+          <p style="font-family:'Manrope',sans-serif;font-size:14px;line-height:1.65" class="text-[#444748]">Añade al carrito o escríbenos directamente por Instagram o WhatsApp. Cada pedido se prepara de forma artesanal, bajo tu nombre, con atención al detalle.</p>
         </div>
       </div>
 
-      <div class="flex items-start gap-unit-lg">
-        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
-          <span class="font-headline-sm text-headline-sm text-primary">03</span>
+      <div class="flex items-start gap-5">
+        <div class="w-10 h-10 rounded-full border border-[#c4c7c7] flex items-center justify-center flex-shrink-0">
+          <span style="font-family:'Playfair Display',serif;font-size:15px;font-weight:500" class="text-black">03</span>
         </div>
         <div>
-          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Recibe tu Experiencia</h4>
-          <p class="font-body-md text-body-md text-on-surface-variant">Tu decant llega en nuestra bolsa de firma, envuelto con papel de seda y una nota personal. Envíos a toda Costa Rica.</p>
+          <h4 style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500" class="text-black mb-1">Recibe tu Experiencia</h4>
+          <p style="font-family:'Manrope',sans-serif;font-size:14px;line-height:1.65" class="text-[#444748]">Tu decant llega en nuestra bolsa de firma de tela crema, envuelto con papel de seda y una nota personal escrita a mano. Envíos a toda Costa Rica.</p>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Size Guide -->
-  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-lg">Guía de Tamaños</h3>
-    <div class="grid grid-cols-1 gap-unit-sm">
+  <!-- Guía de tamaños -->
+  <div class="px-5 py-10 border-b border-[#c4c7c7]/30">
+    <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em" class="uppercase text-black mb-6">Guía de Tamaños</p>
+    <div class="flex flex-col gap-0">
 
-      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
-        <div class="flex items-center gap-unit-lg">
-          <div class="w-8 h-16 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+      <div class="flex justify-between items-center py-5 border-b border-[#c4c7c7]/20">
+        <div class="flex items-center gap-5">
+          <div class="w-6 bg-[#e9e8e7] border border-[#c4c7c7]/50 flex-shrink-0" style="height:48px"></div>
           <div>
-            <p class="font-headline-sm text-headline-sm text-primary">2ml</p>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">Prueba — 10–15 aplicaciones</p>
+            <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-black">2ml</p>
+            <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Prueba — 10–15 aplicaciones</p>
           </div>
         </div>
-        <p class="font-headline-sm text-headline-sm text-secondary">$12</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$12</p>
       </div>
 
-      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
-        <div class="flex items-center gap-unit-lg">
-          <div class="w-8 h-20 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+      <div class="flex justify-between items-center py-5 border-b border-[#c4c7c7]/20">
+        <div class="flex items-center gap-5">
+          <div class="w-6 bg-[#e9e8e7] border border-[#c4c7c7]/50 flex-shrink-0 relative" style="height:60px">
+            <div class="absolute inset-x-0 bottom-0 bg-[#735c00]/10" style="height:40%"></div>
+          </div>
           <div>
-            <p class="font-headline-sm text-headline-sm text-primary">5ml</p>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">Popular — 25–35 aplicaciones</p>
+            <div class="flex items-center gap-2 mb-0.5">
+              <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-black">5ml</p>
+              <span style="font-family:'Manrope',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.08em;background:#ffe088;color:#241a00" class="px-2 py-0.5 uppercase">MÁS POPULAR</span>
+            </div>
+            <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Popular — 25–35 aplicaciones</p>
           </div>
         </div>
-        <p class="font-headline-sm text-headline-sm text-secondary">$42</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$42</p>
       </div>
 
-      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
-        <div class="flex items-center gap-unit-lg">
-          <div class="w-8 h-24 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+      <div class="flex justify-between items-center py-5 border-b border-[#c4c7c7]/20">
+        <div class="flex items-center gap-5">
+          <div class="w-6 bg-[#e9e8e7] border border-[#c4c7c7]/50 flex-shrink-0" style="height:72px"></div>
           <div>
-            <p class="font-headline-sm text-headline-sm text-primary">10ml</p>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">Favorito — 50–70 aplicaciones</p>
+            <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-black">10ml</p>
+            <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Favorito — 50–70 aplicaciones</p>
           </div>
         </div>
-        <p class="font-headline-sm text-headline-sm text-secondary">$75</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$75</p>
       </div>
 
-      <div class="flex justify-between items-center py-unit-md">
-        <div class="flex items-center gap-unit-lg">
-          <div class="w-8 h-28 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+      <div class="flex justify-between items-center py-5">
+        <div class="flex items-center gap-5">
+          <div class="w-6 bg-[#e9e8e7] border border-[#c4c7c7]/50 flex-shrink-0" style="height:84px"></div>
           <div>
-            <p class="font-headline-sm text-headline-sm text-primary">15ml</p>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">Premium — 75–100 aplicaciones</p>
+            <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-black">15ml</p>
+            <p style="font-family:'Manrope',sans-serif;font-size:12px" class="text-[#444748]">Premium — 75–100 aplicaciones</p>
           </div>
         </div>
-        <p class="font-headline-sm text-headline-sm text-secondary">$105</p>
+        <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500" class="text-[#735c00]">$105</p>
       </div>
 
     </div>
   </div>
 
-  <!-- Featured Decants -->
-  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
-    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-lg">Decants Destacados</h3>
-    <div class="grid grid-cols-3 gap-gutter">
+  <!-- Decants Destacados -->
+  <div class="px-5 py-10 border-b border-[#c4c7c7]/30">
+    <p style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em" class="uppercase text-black mb-6">Decants Destacados</p>
+    <div class="grid grid-cols-3 gap-3">
+
       <a href="product.html" class="group block">
-        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Noir Éthéré" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Vency Rouge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
         </div>
-        <p class="font-label-md text-label-md text-primary uppercase text-xs">Noir Éthéré</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Vency Rouge</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
       </a>
+
+      <a href="product.html?f=citrus" class="group block">
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Citrus Enigma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD5s3CdDXekCakicVuz578NilmB90Krgh2XdKkMezJaXKsdaJZTsBahrZuZ0r8N5ZNTkqjsetI4xRvWw92RRNys6_zLIBLDr571bEuJG__M5Ibf3cPv6OZS0eX48Ujhv51VGeT2US1KgcPUkzNuSlnj_N4o5IkcPNMqgxOLWHveOM4lDyBKStrJFh7_Jdiw_KY-iKbXPPYk6y8pbiJCZ4sW0r1Mjj4kTVMt3kDNU6x_B7y-rP1mxKf"/>
+        </div>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Citrus Enigma</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+      </a>
+
+      <a href="product.html?f=carmesi" class="group block">
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Enigma Carmesí" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
+        </div>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Enigma Carmesí</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+      </a>
+
       <a href="product.html?f=rouge54" class="group block">
-        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
         </div>
-        <p class="font-label-md text-label-md text-primary uppercase text-xs">Rouge 5.4</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Rouge 5.4</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
       </a>
-      <a href="product.html?f=oudsilk" class="group block">
-        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
-          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
+
+      <a href="product.html?f=naxos" class="group block">
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Naxos CR" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALjbvitvyr2sm13oKpITQWgIiFKXJ49x360si-FqhHdtmXUdOTbcdhNvMKJW8jw-t6AwgDIDmVrk9puujskrkGevIlsZiYAT0gUKrf923gIwRKQtY9BdtgjSj-wk_aIFvSF9WymhWCgzFXzG1Se4JWujT9Dk8UKIL-BspnI8LxDgkcqb9mmZb3tHQyw5eTEjm-5VFZyt6PUnd2u9o5b49tXh2Sdr87zeXd-b9DasSHfHLtimv66H46"/>
         </div>
-        <p class="font-label-md text-label-md text-primary uppercase text-xs">Oud Silk</p>
-        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Naxos CR</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
       </a>
+
+      <a href="product.html?f=silver8" class="group block">
+        <div class="overflow-hidden bg-[#e9e8e7] mb-2" style="aspect-ratio:3/4">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Silver 8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlKE5ahNL_DQsyLGkSf-AGpjv5h9JI5zqWFayommDyeMxLV1v7doj0v8MC-Fv9hMQwfw26R3F6jxJ-R3MVdX5F6EFRPKhxhynVbTQ1RgTp_BJFnMGDLyMPokf2TKb4CeFbLkNKW7tginjMaXCezUbNXTyJ3wV7uR21V5Bn2q3GkivpRXtR-LhAfjmjbrDy7ZoJEGNr4VHKXu26vzpLfBccJQoQ6-ZIsSCaIr2avvB9oSKTWwwK2T8"/>
+        </div>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em" class="uppercase text-black leading-tight">Silver 8</p>
+        <p style="font-family:'Manrope',sans-serif;font-size:10px" class="text-[#444748]">Desde $12</p>
+      </a>
+
     </div>
   </div>
 
-  <!-- Contact CTA -->
-  <div class="px-margin-mobile py-unit-xl text-center">
-    <h3 class="font-headline-md text-headline-md text-primary mb-unit-sm">¿Tienes Dudas?</h3>
-    <p class="font-body-md text-body-md text-on-surface-variant mb-unit-lg">Nuestro equipo está disponible para guiarte en la elección perfecta.</p>
-    <div class="flex flex-col gap-unit-sm items-center">
-      <a href="https://instagram.com/vency.cr" target="_blank" class="flex items-center gap-unit-sm font-label-md text-label-md uppercase text-primary hover:opacity-70 transition-opacity">
-        <span class="material-symbols-outlined">photo_camera</span> Instagram · @vency.cr
+  <!-- Contacto -->
+  <div class="px-5 py-10 text-center">
+    <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500" class="text-black mb-2">¿Tienes Dudas?</h3>
+    <p style="font-family:'Manrope',sans-serif;font-size:14px;line-height:1.6" class="text-[#444748] mb-6">Nuestro equipo te guía en la elección perfecta.<br/>Respuesta en menos de 24 horas.</p>
+    <div class="flex flex-col gap-3 items-center">
+      <a href="https://instagram.com/vency.cr" target="_blank" rel="noopener" class="flex items-center gap-3 hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-black">photo_camera</span>
+        <span style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.06em" class="uppercase text-black">Instagram · @vency.cr</span>
       </a>
-      <a href="https://wa.me/50600000000" target="_blank" class="flex items-center gap-unit-sm font-label-md text-label-md uppercase text-primary hover:opacity-70 transition-opacity">
-        <span class="material-symbols-outlined">chat</span> WhatsApp · Escríbenos
+      <a href="https://wa.me/50600000000" target="_blank" rel="noopener" class="flex items-center gap-3 hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-black">chat</span>
+        <span style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.06em" class="uppercase text-black">WhatsApp · Escríbenos</span>
       </a>
     </div>
   </div>
 
 </main>
 
-<!-- CTA Bar -->
-<div class="fixed bottom-16 left-0 w-full bg-primary text-on-primary px-margin-mobile py-unit-md z-40">
-  <a href="index.html" class="flex items-center justify-center gap-unit-sm font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-opacity">
-    <span class="material-symbols-outlined">auto_awesome</span>
-    Explorar la Colección
+<!-- CTA Bar sobre la nav -->
+<div class="cta-bar fixed bottom-[72px] left-0 w-full bg-black px-5 py-4 z-40">
+  <a href="index.html" class="flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">
+    <span class="material-symbols-outlined text-white text-xl">auto_awesome</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em" class="uppercase text-white">Explorar la Colección</span>
   </a>
 </div>
 
-<!-- Bottom Nav -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-8 bg-surface/80 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] z-50">
-  <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">auto_awesome</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Atelier</span>
+<!-- Navegación inferior -->
+<nav class="nav-bar fixed bottom-0 left-0 w-full flex justify-around items-center px-5 pt-3 bg-white/92 backdrop-blur-md border-t border-[#c4c7c7]/40 z-50">
+  <a href="index.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
+    <span class="material-symbols-outlined text-xl">auto_awesome</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Atelier</span>
   </a>
-  <a href="discover.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">search</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Discover</span>
+  <a href="discover.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
+    <span class="material-symbols-outlined text-xl">search</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Descubrir</span>
   </a>
-  <a href="decants.html" class="flex flex-col items-center justify-center text-primary border-t-2 border-primary pt-2 transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">experiment</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Decants</span>
+  <a href="decants.html" class="flex flex-col items-center gap-1 text-black border-t-2 border-black pt-1 px-3 -mt-3">
+    <span class="material-symbols-outlined text-xl">experiment</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Decants</span>
   </a>
-  <a href="profile.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
-    <span class="material-symbols-outlined">person</span>
-    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Perfil</span>
+  <a href="profile.html" class="flex flex-col items-center gap-1 text-[#444748] pt-1 px-3 hover:text-black transition-colors">
+    <span class="material-symbols-outlined text-xl">person</span>
+    <span style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.06em" class="uppercase">Perfil</span>
   </a>
 </nav>
 
