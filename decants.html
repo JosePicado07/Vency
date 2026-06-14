@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Decants | Vency Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#fbf9f9", "surface-dim": "#dbdad9", "surface-bright": "#fbf9f9",
+        "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3",
+        "surface-container": "#efeded", "surface-container-high": "#e9e8e7",
+        "surface-container-highest": "#e4e2e2", "on-surface": "#1b1c1c",
+        "on-surface-variant": "#444748", "inverse-surface": "#303031",
+        "inverse-on-surface": "#f2f0f0", "outline": "#747878",
+        "outline-variant": "#c4c7c7", "surface-tint": "#5f5e5e",
+        "primary": "#000000", "on-primary": "#ffffff",
+        "primary-container": "#1c1b1b", "on-primary-container": "#858383",
+        "inverse-primary": "#c8c6c5", "secondary": "#735c00",
+        "on-secondary": "#ffffff", "secondary-container": "#fed65b",
+        "on-secondary-container": "#745c00", "tertiary": "#000000",
+        "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-error": "#ffffff",
+        "primary-fixed": "#e5e2e1", "primary-fixed-dim": "#c8c6c5",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "background": "#fbf9f9",
+        "on-background": "#1b1c1c", "surface-variant": "#e4e2e2"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: {
+        "unit-xs": "4px", "unit-sm": "8px", "unit-md": "16px",
+        "unit-lg": "24px", "unit-xl": "48px", "margin-mobile": "20px",
+        "margin-tablet": "40px", "gutter": "16px"
+      },
+      fontFamily: {
+        "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+        "headline-md": ["Playfair Display"], "headline-sm": ["Playfair Display"],
+        "body-lg": ["Manrope"], "body-md": ["Manrope"],
+        "label-md": ["Manrope"], "label-sm": ["Manrope"]
+      },
+      fontSize: {
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+        "headline-sm": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { background-color: #fbf9f9; color: #1b1c1c; -webkit-font-smoothing: antialiased; min-height: max(884px, 100dvh); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+
+<!-- Header -->
+<header class="w-full top-0 sticky z-50 bg-background flex justify-between items-center px-margin-mobile py-unit-md">
+  <button class="text-primary hover:opacity-70 transition-opacity">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  <h1 class="font-headline-sm text-[18px] uppercase tracking-widest text-primary">Vency Atelier</h1>
+  <a href="bag.html" class="text-primary hover:opacity-70 transition-opacity">
+    <span class="material-symbols-outlined">shopping_bag</span>
+  </a>
+</header>
+
+<main class="pb-36">
+
+  <!-- Hero Section -->
+  <div class="px-margin-mobile pt-unit-xl pb-unit-lg border-b border-outline-variant/30">
+    <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-unit-sm">Atelier de Creación Sensorial</p>
+    <h2 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-unit-md">El Arte del<br/><em>Decant</em></h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-lg">
+      Un decant es la forma más íntima de descubrir una fragancia. Extraemos con precisión el volumen exacto que necesitas, envasado en atomizadores de vidrio de alta calidad, para que explores sin compromisos.
+    </p>
+  </div>
+
+  <!-- 3-Step Process -->
+  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
+    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-xl">Cómo Funciona</h3>
+    <div class="flex flex-col gap-unit-xl">
+
+      <div class="flex items-start gap-unit-lg">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
+          <span class="font-headline-sm text-headline-sm text-primary">01</span>
+        </div>
+        <div>
+          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Elige tu Fragancia</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Explora nuestra colección de originales e impresiones de alta fidelidad. Selecciona el tamaño que mejor se adapte a tu ritual.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-unit-lg">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
+          <span class="font-headline-sm text-headline-sm text-primary">02</span>
+        </div>
+        <div>
+          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Realiza tu Pedido</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Añade al carrito o escríbenos directamente por Instagram o WhatsApp. Cada pedido se prepara de forma artesanal bajo tu nombre.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-unit-lg">
+        <div class="w-10 h-10 rounded-full border border-outline flex items-center justify-center flex-shrink-0 mt-1">
+          <span class="font-headline-sm text-headline-sm text-primary">03</span>
+        </div>
+        <div>
+          <h4 class="font-headline-sm text-headline-sm text-primary mb-unit-xs">Recibe tu Experiencia</h4>
+          <p class="font-body-md text-body-md text-on-surface-variant">Tu decant llega en nuestra bolsa de firma, envuelto con papel de seda y una nota personal. Envíos a toda Costa Rica.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Size Guide -->
+  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
+    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-lg">Guía de Tamaños</h3>
+    <div class="grid grid-cols-1 gap-unit-sm">
+
+      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
+        <div class="flex items-center gap-unit-lg">
+          <div class="w-8 h-16 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+          <div>
+            <p class="font-headline-sm text-headline-sm text-primary">2ml</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Prueba — 10–15 aplicaciones</p>
+          </div>
+        </div>
+        <p class="font-headline-sm text-headline-sm text-secondary">$12</p>
+      </div>
+
+      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
+        <div class="flex items-center gap-unit-lg">
+          <div class="w-8 h-20 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+          <div>
+            <p class="font-headline-sm text-headline-sm text-primary">5ml</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Popular — 25–35 aplicaciones</p>
+          </div>
+        </div>
+        <p class="font-headline-sm text-headline-sm text-secondary">$42</p>
+      </div>
+
+      <div class="flex justify-between items-center py-unit-md border-b border-outline-variant/20">
+        <div class="flex items-center gap-unit-lg">
+          <div class="w-8 h-24 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+          <div>
+            <p class="font-headline-sm text-headline-sm text-primary">10ml</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Favorito — 50–70 aplicaciones</p>
+          </div>
+        </div>
+        <p class="font-headline-sm text-headline-sm text-secondary">$75</p>
+      </div>
+
+      <div class="flex justify-between items-center py-unit-md">
+        <div class="flex items-center gap-unit-lg">
+          <div class="w-8 h-28 bg-surface-container-high rounded-sm flex-shrink-0 border border-outline-variant/40"></div>
+          <div>
+            <p class="font-headline-sm text-headline-sm text-primary">15ml</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Premium — 75–100 aplicaciones</p>
+          </div>
+        </div>
+        <p class="font-headline-sm text-headline-sm text-secondary">$105</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Featured Decants -->
+  <div class="px-margin-mobile py-unit-xl border-b border-outline-variant/30">
+    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-lg">Decants Destacados</h3>
+    <div class="grid grid-cols-3 gap-gutter">
+      <a href="product.html" class="group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Noir Éthéré" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
+        </div>
+        <p class="font-label-md text-label-md text-primary uppercase text-xs">Noir Éthéré</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+      </a>
+      <a href="product.html?f=rouge54" class="group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
+        </div>
+        <p class="font-label-md text-label-md text-primary uppercase text-xs">Rouge 5.4</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+      </a>
+      <a href="product.html?f=oudsilk" class="group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-sm">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
+        </div>
+        <p class="font-label-md text-label-md text-primary uppercase text-xs">Oud Silk</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">Desde $12</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact CTA -->
+  <div class="px-margin-mobile py-unit-xl text-center">
+    <h3 class="font-headline-md text-headline-md text-primary mb-unit-sm">¿Tienes Dudas?</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant mb-unit-lg">Nuestro equipo está disponible para guiarte en la elección perfecta.</p>
+    <div class="flex flex-col gap-unit-sm items-center">
+      <a href="https://instagram.com/vency.cr" target="_blank" class="flex items-center gap-unit-sm font-label-md text-label-md uppercase text-primary hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">photo_camera</span> Instagram · @vency.cr
+      </a>
+      <a href="https://wa.me/50600000000" target="_blank" class="flex items-center gap-unit-sm font-label-md text-label-md uppercase text-primary hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">chat</span> WhatsApp · Escríbenos
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- CTA Bar -->
+<div class="fixed bottom-16 left-0 w-full bg-primary text-on-primary px-margin-mobile py-unit-md z-40">
+  <a href="index.html" class="flex items-center justify-center gap-unit-sm font-label-md text-label-md uppercase tracking-widest hover:opacity-90 transition-opacity">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    Explorar la Colección
+  </a>
+</div>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-8 bg-surface/80 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] z-50">
+  <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Atelier</span>
+  </a>
+  <a href="discover.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">search</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Discover</span>
+  </a>
+  <a href="decants.html" class="flex flex-col items-center justify-center text-primary border-t-2 border-primary pt-2 transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">experiment</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Decants</span>
+  </a>
+  <a href="profile.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Perfil</span>
+  </a>
+</nav>
+
+</body>
+</html>

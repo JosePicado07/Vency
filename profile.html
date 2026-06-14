@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi Perfil | Vency Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#fbf9f9", "surface-dim": "#dbdad9", "surface-bright": "#fbf9f9",
+        "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3",
+        "surface-container": "#efeded", "surface-container-high": "#e9e8e7",
+        "surface-container-highest": "#e4e2e2", "on-surface": "#1b1c1c",
+        "on-surface-variant": "#444748", "inverse-surface": "#303031",
+        "inverse-on-surface": "#f2f0f0", "outline": "#747878",
+        "outline-variant": "#c4c7c7", "surface-tint": "#5f5e5e",
+        "primary": "#000000", "on-primary": "#ffffff",
+        "primary-container": "#1c1b1b", "on-primary-container": "#858383",
+        "inverse-primary": "#c8c6c5", "secondary": "#735c00",
+        "on-secondary": "#ffffff", "secondary-container": "#fed65b",
+        "on-secondary-container": "#745c00", "tertiary": "#000000",
+        "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-error": "#ffffff",
+        "primary-fixed": "#e5e2e1", "primary-fixed-dim": "#c8c6c5",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "background": "#fbf9f9",
+        "on-background": "#1b1c1c", "surface-variant": "#e4e2e2"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: {
+        "unit-xs": "4px", "unit-sm": "8px", "unit-md": "16px",
+        "unit-lg": "24px", "unit-xl": "48px", "margin-mobile": "20px",
+        "margin-tablet": "40px", "gutter": "16px"
+      },
+      fontFamily: {
+        "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+        "headline-md": ["Playfair Display"], "headline-sm": ["Playfair Display"],
+        "body-lg": ["Manrope"], "body-md": ["Manrope"],
+        "label-md": ["Manrope"], "label-sm": ["Manrope"]
+      },
+      fontSize: {
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+        "headline-sm": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { background-color: #fbf9f9; color: #1b1c1c; -webkit-font-smoothing: antialiased; min-height: max(884px, 100dvh); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+
+<!-- Header -->
+<header class="w-full top-0 sticky z-50 bg-background flex justify-between items-center px-margin-mobile py-unit-md">
+  <button class="text-primary hover:opacity-70 transition-opacity">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+  <h1 class="font-headline-sm text-[18px] uppercase tracking-widest text-primary">Vency Atelier</h1>
+  <a href="bag.html" class="text-primary hover:opacity-70 transition-opacity">
+    <span class="material-symbols-outlined">shopping_bag</span>
+  </a>
+</header>
+
+<main class="pb-36">
+
+  <!-- Profile Header -->
+  <div class="px-margin-mobile pt-unit-xl pb-unit-lg text-center border-b border-outline-variant/30">
+    <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-unit-md">
+      <span class="font-headline-md text-headline-md text-on-primary">VA</span>
+    </div>
+    <h2 class="font-headline-sm text-headline-sm text-primary">Connoisseur</h2>
+    <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mt-unit-xs">Miembro del Atelier</p>
+
+    <!-- Stats -->
+    <div class="flex justify-center gap-unit-xl mt-unit-lg">
+      <div class="text-center">
+        <p class="font-headline-md text-headline-md text-primary">3</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Decants</p>
+      </div>
+      <div class="w-px bg-outline-variant/40"></div>
+      <div class="text-center">
+        <p class="font-headline-md text-headline-md text-primary">2</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Pedidos</p>
+      </div>
+      <div class="w-px bg-outline-variant/40"></div>
+      <div class="text-center">
+        <p class="font-headline-md text-headline-md text-primary">5</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Favoritos</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist -->
+  <div class="px-margin-mobile py-unit-lg border-b border-outline-variant/30">
+    <div class="flex justify-between items-center mb-unit-md">
+      <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest">Lista de Deseos</h3>
+      <a href="discover.html" class="font-label-sm text-label-sm text-on-surface-variant underline underline-offset-2">Ver todo</a>
+    </div>
+    <div class="flex gap-gutter overflow-x-auto pb-unit-sm" style="-webkit-overflow-scrolling:touch;">
+      <a href="product.html" class="flex-shrink-0 w-28 group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-xs relative">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Noir Éthéré" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
+          <div class="absolute top-2 right-2"><span class="material-symbols-outlined text-red-400 text-sm">favorite</span></div>
+        </div>
+        <p class="font-label-sm text-label-sm text-primary uppercase truncate">Noir Éthéré</p>
+      </a>
+      <a href="product.html?f=rouge54" class="flex-shrink-0 w-28 group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-xs relative">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
+          <div class="absolute top-2 right-2"><span class="material-symbols-outlined text-red-400 text-sm">favorite</span></div>
+        </div>
+        <p class="font-label-sm text-label-sm text-primary uppercase truncate">Rouge 5.4</p>
+      </a>
+      <a href="product.html?f=oudsilk" class="flex-shrink-0 w-28 group block">
+        <div class="aspect-[3/4] bg-surface-container-high overflow-hidden rounded-lg mb-unit-xs relative">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Oud Silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5X8ucSzJ9Gobkv3SHC6c6veRxib5j7aGp4EhR_TuAUYPtY97eO_hnZcvYLK3H5GfGumAyf3SmFB8Y91lDuxK2Unp0JFx4FumWdtb9reebVmP-HGVQPS-YoBe0BsZfYDcVOdxvkOdvmXpRkZjXEvUOxtz0LsfvjRVsw6MiO9q5K-2QaVD5S3A_8TJ77qfEtq_4QtRJGKnzrt9KrAg8j4l1WOf-WiALn0D9s_q_VLANuJXhWgtthS6i"/>
+          <div class="absolute top-2 right-2"><span class="material-symbols-outlined text-red-400 text-sm">favorite</span></div>
+        </div>
+        <p class="font-label-sm text-label-sm text-primary uppercase truncate">Oud Silk</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Order History -->
+  <div class="px-margin-mobile py-unit-lg border-b border-outline-variant/30">
+    <div class="flex justify-between items-center mb-unit-md">
+      <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest">Mis Pedidos</h3>
+    </div>
+
+    <div class="flex items-center gap-unit-md py-unit-md border-b border-outline-variant/20">
+      <div class="w-16 h-20 bg-surface-container-high overflow-hidden rounded-sm flex-shrink-0">
+        <img class="w-full h-full object-cover" alt="Noir Éthéré" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBibNnrC_9ItQTY0pJ4xQnyiru8niJ3IZyK1osw9yfH-3D9v2m8bwU-Dr36aOY-Uv2AoTH4NSFaqQDI7krUM__uQdua_3R3TeZ5ezJlUw86xcaj9BPH9MFE8lUHnzzx2WS1YcCe1JoKumk8QiQAF62D7k2M99QY_5NkzHyISa0V18qQpIKa-enJuHKWzsNBfN59-XYKzF4tQ3uCODycSj4wjYuglORQZZ7aATesnSM6crk7Etd4nAaW"/>
+      </div>
+      <div class="flex-1">
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Pedido #001 · 12 Jun 2026</p>
+        <h4 class="font-headline-sm text-headline-sm text-primary">Noir Éthéré</h4>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">5ml Decant · $42.00</p>
+      </div>
+      <div>
+        <span class="bg-secondary-fixed/60 text-on-secondary-fixed font-label-sm text-label-sm uppercase px-unit-sm py-unit-xs rounded-full">Enviado</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-unit-md py-unit-md">
+      <div class="w-16 h-20 bg-surface-container-high overflow-hidden rounded-sm flex-shrink-0">
+        <img class="w-full h-full object-cover" alt="Rouge 5.4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D0ZK_iaTQk2C7zHWo3RdLAJ8Q_Nca21jlpr5mZGp5ieyWitWbPzLrqk5PzzFcA5jbguOzV6qQfzXLHyLMN7EIx6FKOV5xZaCWWlmEyzU1NYpHjLcn4qTxGthm8NZJGqeijOvraM41GoB9gYh5X3o9xDiXFjMckRRjY1Rvk4eoJk5cx6Pacq8dbFijUR4ipiCjnbDcv4wo2iHXsEwOt7N7VpFxf0xSO52CSF_5nOjLFc3U3OQry7T"/>
+      </div>
+      <div class="flex-1">
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Pedido #002 · 10 Jun 2026</p>
+        <h4 class="font-headline-sm text-headline-sm text-primary">Rouge 5.4</h4>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">10ml Decant · $75.00</p>
+      </div>
+      <div>
+        <span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase px-unit-sm py-unit-xs rounded-full">Entregado</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <div class="px-margin-mobile py-unit-lg">
+    <h3 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-unit-md">Configuración</h3>
+    <div class="flex flex-col divide-y divide-outline-variant/20">
+      <button class="flex justify-between items-center py-unit-md text-left hover:opacity-70 transition-opacity">
+        <div class="flex items-center gap-unit-md">
+          <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+          <span class="font-body-md text-body-md text-primary">Notificaciones</span>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+      </button>
+      <button class="flex justify-between items-center py-unit-md text-left hover:opacity-70 transition-opacity">
+        <div class="flex items-center gap-unit-md">
+          <span class="material-symbols-outlined text-on-surface-variant">location_on</span>
+          <span class="font-body-md text-body-md text-primary">Dirección de Envío</span>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+      </button>
+      <button class="flex justify-between items-center py-unit-md text-left hover:opacity-70 transition-opacity">
+        <div class="flex items-center gap-unit-md">
+          <span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+          <span class="font-body-md text-body-md text-primary">Método de Pago</span>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+      </button>
+      <button class="flex justify-between items-center py-unit-md text-left hover:opacity-70 transition-opacity">
+        <div class="flex items-center gap-unit-md">
+          <span class="material-symbols-outlined text-on-surface-variant">help</span>
+          <span class="font-body-md text-body-md text-primary">Ayuda y Soporte</span>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+      </button>
+      <button class="flex justify-between items-center py-unit-md text-left hover:opacity-70 transition-opacity">
+        <div class="flex items-center gap-unit-md">
+          <span class="material-symbols-outlined text-on-surface-variant">photo_camera</span>
+          <span class="font-body-md text-body-md text-primary">Síguenos en Instagram</span>
+        </div>
+        <span class="material-symbols-outlined text-on-surface-variant">open_in_new</span>
+      </button>
+    </div>
+
+    <button class="w-full mt-unit-xl border border-outline text-on-surface-variant py-unit-md font-label-md text-label-md uppercase tracking-widest hover:border-primary hover:text-primary transition-colors">
+      Cerrar Sesión
+    </button>
+
+    <p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-unit-lg">Vency Atelier · Atelier de Creación Sensorial · Costa Rica</p>
+  </div>
+
+</main>
+
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile pb-8 bg-surface/80 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] z-50">
+  <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">auto_awesome</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Atelier</span>
+  </a>
+  <a href="discover.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">search</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Discover</span>
+  </a>
+  <a href="decants.html" class="flex flex-col items-center justify-center text-on-surface-variant pt-2 hover:text-primary transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">experiment</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Decants</span>
+  </a>
+  <a href="profile.html" class="flex flex-col items-center justify-center text-primary border-t-2 border-primary pt-2 transition-transform duration-200 scale-95 active:scale-90">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-sm text-label-sm uppercase tracking-tighter">Perfil</span>
+  </a>
+</nav>
+
+</body>
+</html>
